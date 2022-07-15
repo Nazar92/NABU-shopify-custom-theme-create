@@ -1,0 +1,213 @@
+<div class="container" data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
+  <header class="navigation site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
+    {% assign logo = section.settings.logo | img_url: '100x' %}
+    <div class="logo-conteiner">
+      <a href="/">
+        <img src="{{ logo }}" alt="logo">
+      </a>
+    </div>
+    <div class="menu-section desktop-only">
+      {% if section.settings.mega-menu %}
+        <div class="mega-menu">
+        {% for block in section.blocks %}
+          <div class="mega-menu-item">
+            <p class="mega-menu-item-title">{{ block.settings.mega-item-title }}</p>
+            <div class="dropdown-megamenu">
+              <nav class="navigation" role="navigation">
+                <ul>
+                  {%- for link in block.settings.mage_main_linklist.links -%}
+                    <li>
+                      <a href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %}>
+                        {{ link.title }}
+                      </a>
+                      {%- if link.links != blank -%}
+                        <ul>
+                          {%- for child_link in link.links -%}
+                            <li class="child-link">
+                              <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>
+                                {{ child_link.title }}
+                              </a>
+                              {%- if child_link.links != blank -%}
+                                <ul>
+                                  {%- for grandchild_link in child_link.links -%}
+                                    <li class="grandchild_link">
+                                      <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page"{% endif %}>
+                                        {{ grandchild_link.title }}
+                                      </a>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                              {%- endif -%}
+
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </nav>
+              {% if block.settings.mage_main_linklist2 != blank %}
+                <nav class="navigation" role="navigation">
+                  <ul>
+                    {%- for link in block.settings.mage_main_linklist2.links -%}
+                      <li>
+                        <a href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %}>
+                          {{ link.title }}
+                        </a>
+                        {%- if link.links != blank -%}
+                          <ul>
+                            {%- for child_link in link.links -%}
+                              <li class="child-link">
+                                <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>
+                                  {{ child_link.title }}
+                                </a>
+                                {%- if child_link.links != blank -%}
+                                  <ul>
+                                    {%- for grandchild_link in child_link.links -%}
+                                      <li class="grandchild_link">
+                                        <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page"{% endif %}>
+                                          {{ grandchild_link.title }}
+                                        </a>
+                                      </li>
+                                    {%- endfor -%}
+                                  </ul>
+                                {%- endif -%}
+
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </nav>
+              {% endif %}
+              {% if block.settings.mega-image != blank %}
+                {% if block.settings.mega-img-link != blank %}
+                  <a href="{{ block.settings.mega-img-link }}">
+                {% endif %}
+                  <img class="dropdown-img" src="{{ block.settings.mega-image | img_url: '200x' }}" alt="img">
+                {% if block.settings.mega-img-link != blank %}
+                  </a>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      {% else %}
+        {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
+      {% endif %}
+    </div>
+
+    <div class="navigation-actions">
+      <div class="mobile-menu mobile-only">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <div class="mobile-menu-container">
+          <i class="fa fa-times" aria-hidden="true"></i>
+          {% include 'mobile-site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
+        </div>
+      </div>
+
+      {% form 'currency' %}
+        {{ form | currency_selector }}
+      {% endform %}
+      <div class="navigation-action-item item-account">
+        <a id="account-modal-btn" class="account-toggle" href="/account/login">
+          <i class="fas fa-user"></i>
+        </a>
+      </div>
+      <div class="navigation-action-item item-cart">
+        <a id="cart-modal-btn" href="/cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-counter">
+                 <span class="cart-count header-bar__cart-count
+                    {% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}
+                 </span>
+            </span>
+        </a>
+      </div>
+    </div>
+  </header>
+</div>
+
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Header"
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": {
+        "en": "Logo image"
+      }
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": {
+        "en": "Menu"
+      },
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "mobile_main_linklist",
+      "label": {
+        "en": "Mobile menu"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "mega-menu",
+      "label": {
+        "en": "Use mega menu"
+      },
+      "default": false
+    }
+
+  ],
+  "blocks": [
+    {
+      "type": "logo_image",
+      "name": "Mega logo",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "mage_main_linklist",
+            "label": {
+              "en": "Menu column 1"
+            }
+        },
+        {
+          "type": "link_list",
+          "id": "mage_main_linklist2",
+            "label": {
+              "en": "Menu column 2"
+            }
+        },
+        {
+          "type": "image_picker",
+          "id": "mega-image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "mega-img-link",
+          "label": "Main Link"
+        },
+        {
+          "type": "text",
+          "id": "mega-item-title",
+          "label": "Column title"
+        }
+    ]
+   }
+  ]
+}
+{% endschema %}

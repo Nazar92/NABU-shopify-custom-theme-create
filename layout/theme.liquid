@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="{{ shop.locale }}">
+<head>
+  <title>{{ page_title }}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="{{ page_description | escape }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+  {{ content_for_header }}
+  <link rel="stylesheet" href="{{ 'application.scss.css' | asset_url }}">
+
+  <link rel="stylesheet" href="{{ 'vendor.min.css' | asset_url }}">
+  <script src="{{ 'vendor.min.js' | asset_url }}"></script>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }}
+
+  <!-- Only include one of the below in your theme. -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/1.1.0/cart.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/1.1.0/rivets-cart.min.js"></script>
+
+
+  <script type="application/json" data-ajax-cart-initial-state >
+  {{ cart | json }}
+</script>
+
+  <script type="module">
+    import '{{ "liquid-ajax-cart-v1.10.0.js" | asset_url }}';
+  </script>
+
+  {% section 'theme-settings' %}
+</head>
+<body>
+
+  {% section 'header' %}
+
+  <div class="my-floating-cart"> {% section 'floating-cart' %} </div>
+
+  <script type="module">
+    import { subscribeToCartSectionsUpdate } from '{{ "liquid-ajax-cart-v1.10.0.js" | asset_url }}'
+
+    subscribeToCartSectionsUpdate( sections => {
+      console.log('Sections are updated: ', sections);
+      // Place your code here
+    });
+  </script>
+
+  <script type="application/json" data-ajax-cart-configuration >
+    {
+      "addToCartCssClass": "js-my-cart-open"
+    }
+  </script>
+
+  <style>
+    .my-floating-cart { display: none; }
+
+    /* Show the floating cart if the 'js-my-cart-open' CSS class exists */
+    .js-my-cart-open .my-floating-cart { display: block; }
+  </style>
+
+
+  <main role="main" id="main">
+    {{ content_for_layout }}
+  </main>
+
+  <script src="{{ 'application.js' | asset_url }}"></script>
+
+
+
+
+  <!-- Include jQuery from Google's CDN. -->
+  <!-- Your theme may already include jQuery - if so, you can skip this line. -->
+  {% comment %}{{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' | script_tag }}{% endcomment %}
+
+  <!-- Include Cart.js -->
+  {{ 'cart.min.js' | asset_url | script_tag }}
+
+  <!-- Initialise Cart.js once the page has loaded -->
+  <script type="text/javascript">
+    jQuery(function() {
+      CartJS.init({{ cart | json }});
+    });
+  </script>
+
+
+  <script type="application/json" data-ajax-cart-initial-state >
+  {{ cart | json }}
+</script>
+
+  <script type="module">
+    import '{{ "liquid-ajax-cart-v1.10.2.js" | asset_url }}';
+  </script>
+
+</body>
+</html>

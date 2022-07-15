@@ -1,0 +1,142 @@
+<div class="homepage-hero-slider">
+
+  <div class="homepage-main-slider swiper-container">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="desktop-slider swiper-slide">
+          {% assign bg_image = block.settings.background_image | img_url: "master" %}
+          {% assign btn_left_bg_image = block.settings.background_btn_left | img_url: "master" %}
+          <div class="homepage-hero-slider_container">
+            <div class="mobile-hide hero-slider-left-section"
+                 style="background-image: url('{{ bg_image }}'); background-position: bottom;">
+              <div class="hero-slider-container container">
+                <div class="homepage-hero-slider_content">
+                  <h2 class="title">
+                    {{ block.settings.title }}
+                  </h2>
+                  <p class="subtitle">
+                    {{ block.settings.boldtitle }}
+                  </p>
+                </div>
+                <div class="slider-buttons">
+                  <a class="btn btn-default btn-shop-primary">
+                    {{ block.settings.button_primary_label }}
+                  </a>
+                </div>
+              </div>
+            </div>
+            {%  if block.settings.mobile_slide_img != blank %}
+              <div class="mobile-slide">
+                <a href="{{ block.settings.mobile-slide-link }}">
+                  <img src="{{ block.settings.mobile_slide_img | img_url: "500x" }}" alt="mobile">
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+
+
+
+
+       {% endfor %}
+    </div>
+  </div>
+</div>
+<script>
+  let homepageHeroSlider = new Swiper('.homepage-main-slider', {
+    draggable: false,
+    {% if section.settings.enable_autoplay and section.blocks.size > 1 %}
+    autoplay: {
+      delay: {{ section.settings.autoplay_duration }}000,
+    },
+    {% endif %}
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Homepage Header Slideshow",
+  "settings": [
+    {
+      "id": "enable_autoplay",
+      "type": "checkbox",
+      "label": "Autoplay slideshow",
+      "default": true
+    },
+    {
+      "id": "autoplay_duration",
+      "type": "range",
+      "label": "Autoplay duration",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "id": "background_image",
+          "type": "image_picker",
+          "label": "Background image left",
+          "info": "1980x600 recommended"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Heading Left",
+          "default": "Heading"
+        },
+        {
+          "id": "boldtitle",
+          "type": "text",
+          "label": "Subheading Left",
+          "default": "Introduce customers to your shop with lifestyle and product imagery"
+        },
+        {
+          "type": "header",
+          "content": "Buttons"
+        },
+        {
+          "id": "button_primary_label",
+          "type": "text",
+          "label": "Button Label Primary",
+          "default": "Shop Now"
+        },
+        {
+          "id": "button_primary_link",
+          "type": "url",
+          "label": "Button Link Left"
+        },
+        {
+          "id": "background_btn_left",
+          "type": "image_picker",
+          "label": "Background btn left",
+          "info": "200x50 recommended"
+        },
+        {
+          "id": "button_secondary_label",
+          "type": "text",
+          "label": "Button label",
+          "default": "Shop Now Bundle"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Header Slider",
+      "category": "Sliders"
+    }
+  ]
+}
+
+{% endschema %}

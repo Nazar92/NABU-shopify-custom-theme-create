@@ -1,0 +1,48 @@
+<div class="product-slider-wrapper">
+  <h2 class="home-section--title">{{ section.settings.slider-title }}</h2>
+  <div class="product-slider--container">
+    <div class="popular-products-slider swiper-container">
+      <div class="swiper-wrapper">
+        {% for product in collections['slider'].products %}
+          <div class="swiper-slide">
+            <div class="product-item-wrapper">
+              <div class="product-item" data-product-id="{{ product.id }}">
+                <div class="product-item-image">
+                  {% assign product_img_src = product.featured_image.src | img_url: '150x' %}
+                  <img src="{{ product_img_src }}" alt="">
+                </div>
+                <div class="product-item-title">
+                  {{ product.title }}
+                </div>
+                <p class="product-price">{{ product.price | money }}</p>
+                <div class="product-buttons">
+                  <a href="{{ product.url }}" class="btn btn-view-product">View product</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "slider-title",
+        "label": "Slider title",
+        "default": "Discounted collection"
+      }
+    ],
+    "blocks": [],
+  "presets": [
+      {
+        "name": "Product slider"
+      }
+    ]
+  }
+{% endschema %}

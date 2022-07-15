@@ -1,0 +1,127 @@
+<div class="custom-half-img-product-section">
+  {% if section.settings.in-container != blank %}
+    <div class="container">
+  {% endif %}
+      {% if section.settings.title != blank %}
+        <h2 class="section-title">{{ section.settings.title }}</h2>
+      {% endif %}
+      <div class="content-section">
+        <div class="main-img-container">
+          <img class="main-img" src="{{ section.settings.main-img | img_url: "master" }}" alt="">
+              {% for block in section.blocks %}
+                <p class="custom-product-btn"
+                   style="position: absolute; left: {{ block.settings.horisontal-position }}%; top: {{ block.settings.vertical-position }}%;"
+                   data-index="{{ forloop.index }}"
+                ><img style="width: 20px;" src="https://cdn.shopify.com/s/files/1/0552/4530/7978/files/Dot-PNG-Picture.png?v=1656687320" alt=""></p>
+              {% endfor %}
+        </div>
+        <div class="custom-product-slider-container">
+          <div class="custom-products-slider">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="products-slider-item swiper-slide">
+                  {% if block.settings.current-product != blank %}
+                    <a href="{{ block.settings.current-product.url }}">
+                      <img src="{{ block.settings.current-product.featured_image | product_img_url: "150x" }}" alt="">
+                    </a>
+                    <h3>
+                      <a href="{{ block.settings.current-product.url }}">{{ block.settings.current-product.title }}</a>
+                    </h3>
+                    <a class="view-product-button" href="{{ block.settings.current-product.url }}">View product</a>
+                  {% else %}
+                    <h3>{{ block.settings.current-title }}</h3>
+                    <p class="current-description">{{ block.settings.current-description }}</p>
+                    <a class="current-button mt-2" href="{{ block.settings.current-link }}">{{ block.settings.current-button }}</a>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+  {% if section.settings.in-container != blank %}
+    </div>
+  {% endif %}
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Custom position button",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "in-container",
+        "label": "In container"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Main title"
+      },
+      {
+        "type": "image_picker",
+        "id": "main-img",
+        "label": "Slider title"
+      }
+    ],
+    "blocks": [
+      {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+          {
+            "type": "product",
+            "id": "current-product",
+            "label": "Product"
+          },
+          {
+            "id": "horisontal-position",
+            "type": "range",
+            "label": "Horisontal position",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 5
+          },
+          {
+            "id": "vertical-position",
+            "type": "range",
+            "label": "Vertical position",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 5
+          },
+          {
+            "type": "text",
+            "id": "current-title",
+            "label": "Tile"
+          },
+          {
+            "type": "text",
+            "id": "current-description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "current-button",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "current-link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+  "presets": [
+      {
+        "name": "Custom position button"
+      }
+    ]
+  }
+{% endschema %}

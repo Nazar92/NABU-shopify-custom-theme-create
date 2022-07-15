@@ -1,0 +1,100 @@
+{
+  "current": {
+    "sections": {
+      "163993588734b31af9": {
+        "type": "hero-slider",
+        "blocks": {
+          "f4ef32d5-b4d2-4377-b77a-78190bac623d": {
+            "type": "slide",
+            "settings": {
+              "background_image": "shopify:\/\/shop_images\/shapka-1024x741.jpg",
+              "title": "Heading",
+              "boldtitle": "Introduce customers to your shop with lifestyle and product imagery",
+              "button_primary_label": "Shop Now",
+              "button_primary_link": "",
+              "button_secondary_label": "Shop Now Bundle"
+            }
+          },
+          "e0413ea4-6e2f-4c36-aa8f-56baf454fce6": {
+            "type": "slide",
+            "settings": {
+              "background_image": "shopify:\/\/shop_images\/Group_3.png",
+              "title": "Heading",
+              "boldtitle": "Introduce customers to your shop with lifestyle and product imagery",
+              "button_primary_label": "Shop Now",
+              "button_primary_link": "",
+              "button_secondary_label": "Shop Now Bundle"
+            }
+          }
+        },
+        "block_order": [
+          "f4ef32d5-b4d2-4377-b77a-78190bac623d",
+          "e0413ea4-6e2f-4c36-aa8f-56baf454fce6"
+        ],
+        "settings": {
+          "enable_autoplay": true,
+          "autoplay_duration": 5
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "0457b34b-2918-4774-8899-8c150f1bf262": {
+            "type": "logo_image",
+            "settings": {
+              "mage_main_linklist": "main-menu",
+              "mage_main_linklist2": "mobile-menu",
+              "mega-image": "shopify:\/\/shop_images\/12_sign_black.png",
+              "mega-img-link": "shopify:\/\/products\/test-2",
+              "mega-item-title": "Item 1"
+            }
+          },
+          "0a621bb2-e1ac-4b0e-ba7e-71535b3be6ca": {
+            "type": "logo_image",
+            "settings": {
+              "mage_main_linklist": "footer",
+              "mage_main_linklist2": "",
+              "mega-img-link": "",
+              "mega-item-title": "Item 2"
+            }
+          }
+        },
+        "block_order": [
+          "0457b34b-2918-4774-8899-8c150f1bf262",
+          "0a621bb2-e1ac-4b0e-ba7e-71535b3be6ca"
+        ],
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/12_sign_black.png",
+          "main_linklist": "main-menu",
+          "mobile_main_linklist": "mobile-menu",
+          "mega-menu": true
+        }
+      },
+      "1640173596fa70b98f": {
+        "type": "product-slider",
+        "settings": {
+          "slider-title": "Discounted collection"
+        }
+      },
+      "1641633282f3c4914f": {
+        "type": "collection-slider",
+        "settings": {
+          "slider-title": "Collection product slider",
+          "product-collection": "slider"
+        }
+      },
+      "floating-cart": {
+        "type": "floating-cart",
+        "settings": {}
+      }
+    },
+    "content_for_index": [
+      "163993588734b31af9",
+      "1640173596fa70b98f",
+      "1641633282f3c4914f"
+    ]
+  },
+  "presets": {
+    "Default": {}
+  }
+}

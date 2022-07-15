@@ -1,0 +1,112 @@
+<style>
+
+
+  h1{
+    font-size: {{ section.settings.h1-size }}px !important;
+    color: {{ section.settings.h1-color }} !important;
+  }
+  h2{
+    font-size: {{ section.settings.h2-size }}px !important;
+  }
+  h1, h2, h3, h4, h5, h6{
+    font-family: {{ section.settings.heading_font.family }}
+  }
+  {{ section.settings.heading_font | font_face }}
+  {{ section.settings.body_font | font_face }}
+
+  body{
+    font-family: {{ section.settings.body_font.family }} !important;
+  }
+  @media screen and (max-width: 767px) {
+    h1{
+      font-size: {{ section.settings.h1-size-mobile }}px !important;
+    }
+    h2{
+      font-size: {{ section.settings.h2-size-mobile }}px !important;
+    }
+
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "Theme style",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Heading style",
+        "info": "h1, h2, h3, h4, h5, h6"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "range",
+        "id": "h1-size",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Main title desktop size H1",
+        "default": 25
+      },
+      {
+        "type": "range",
+        "id": "h1-size-mobile",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Main title mobile size H1",
+        "default": 25
+      },
+      {
+        "type": "color",
+        "id": "h1-color",
+        "label": "H1 color",
+        "default": "#222222"
+      },
+      {
+        "type": "range",
+        "id": "h2-size",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Main title desktop size H2",
+        "default": 25
+      },
+      {
+        "type": "range",
+        "id": "h2-size-mobile",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Main title mobile size H2",
+        "default": 25
+      },
+      {
+        "type": "color",
+        "id": "h2-color",
+        "label": "H2 color",
+        "default": "#222222"
+      }
+    ],
+  "presets": [
+      {
+        "name": "Theme style"
+      }
+    ]
+  }
+{% endschema %}
