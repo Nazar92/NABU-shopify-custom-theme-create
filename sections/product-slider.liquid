@@ -14,9 +14,9 @@
                   </a>
                 </div>
                 <div class="product-item-title">
-                  {{ product.title }}
+                  <a href="{{ product.url }}">{{ product.title }}</a>
                 </div>
-                <p class="product-price"><a href="{{ product.url }}">{{ product.price | money }}</a></p>
+                <p class="product-price">{{ product.price | money }}</p>
                 <div class="product-buttons">
                   <a href="{{ product.url }}" class="btn btn-view-product">View product</a>
                 </div>
