@@ -9,12 +9,10 @@
               <div class="product-item" data-product-id="{{ product.id }}">
                 <div class="product-item-image">
                   {% assign product_img_src = product.featured_image.src | img_url: '150x' %}
-                  <a href="{{ product.url }}">
-                    <img src="{{ product_img_src }}" alt="">
-                  </a>
+                  <img src="{{ product_img_src }}" alt="">
                 </div>
                 <div class="product-item-title">
-                  <a href="{{ product.url }}">{{ product.title }}</a>
+                  {{ product.title }}
                 </div>
                 <p class="product-price">{{ product.price | money }}</p>
                 <div class="product-buttons">
