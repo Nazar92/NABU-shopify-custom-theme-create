@@ -9,7 +9,9 @@
               <div class="product-item" data-product-id="{{ product.id }}">
                 <div class="product-item-image">
                   {% assign product_img_src = product.featured_image.src | img_url: '150x' %}
-                  <img src="{{ product_img_src }}" alt="">
+                  <a href="{{ product.url }}">
+                    <img src="{{ product_img_src }}" alt="">
+                  </a>
                 </div>
                 <div class="product-item-title">
                   {{ product.title }}
