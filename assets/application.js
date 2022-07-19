@@ -113,6 +113,15 @@ function buildCartModalContent(products) {
 }
 
 $(document).on('cartUpdate', function() {
+    // $("#AddToCart").click(function(){
+        setTimeout(function() {
+            $('.cart-modal').show();
+        }, 1500);
+    // });
+
+    $(".close-cart-popup").click(function(){
+        $(".cart-modal").hide();
+    });
     $.ajax({
         url: '/cart.js',
         dataType: 'json'
