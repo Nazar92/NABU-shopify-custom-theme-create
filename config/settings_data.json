@@ -85,16 +85,83 @@
       },
       "floating-cart": {
         "type": "floating-cart",
-        "settings": {}
+        "settings": {
+        }
+      },
+      "theme-settings": {
+        "type": "theme-settings",
+        "settings": {
+          "heading_font": "helvetica_n4",
+          "body_font": "helvetica_n4",
+          "h1-size": 25,
+          "h1-size-mobile": 25,
+          "h1-color": "#222222",
+          "h2-size": 25,
+          "h2-size-mobile": 25,
+          "h2-color": "#222222"
+        }
+      },
+      "16581338822ab286e2": {
+        "type": "custom-half-img-with-product",
+        "blocks": {
+          "790b29ad-f6f5-475a-8797-9b9977465a4c": {
+            "type": "slide",
+            "settings": {
+              "current-product": "test-1",
+              "horisontal-position": 33,
+              "vertical-position": 14,
+              "current-title": "",
+              "current-description": "",
+              "current-button": "",
+              "current-link": ""
+            }
+          },
+          "ddb26055-15f8-4941-bd4f-a0a1d75e9852": {
+            "type": "slide",
+            "settings": {
+              "current-product": "test-2",
+              "horisontal-position": 39,
+              "vertical-position": 61,
+              "current-title": "",
+              "current-description": "",
+              "current-button": "",
+              "current-link": ""
+            }
+          },
+          "26fa138c-d805-4b34-a883-05d2ea2edf9c": {
+            "type": "slide",
+            "settings": {
+              "current-product": "test-5",
+              "horisontal-position": 55,
+              "vertical-position": 62,
+              "current-title": "",
+              "current-description": "",
+              "current-button": "",
+              "current-link": ""
+            }
+          }
+        },
+        "block_order": [
+          "790b29ad-f6f5-475a-8797-9b9977465a4c",
+          "ddb26055-15f8-4941-bd4f-a0a1d75e9852",
+          "26fa138c-d805-4b34-a883-05d2ea2edf9c"
+        ],
+        "settings": {
+          "in-container": true,
+          "title": "Test section",
+          "main-img": "shopify:\/\/shop_images\/2021-12-22_16-33.webp"
+        }
       }
     },
     "content_for_index": [
       "163993588734b31af9",
       "1640173596fa70b98f",
-      "1641633282f3c4914f"
+      "1641633282f3c4914f",
+      "16581338822ab286e2"
     ]
   },
   "presets": {
-    "Default": {}
+    "Default": {
+    }
   }
 }
