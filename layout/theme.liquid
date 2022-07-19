@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{ 'vendor.min.css' | asset_url }}">
   <script src="{{ 'vendor.min.js' | asset_url }}"></script>
 
-  {% comment %}{{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }}{% endcomment %}
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }}
 
   <script type="application/json" data-ajax-cart-initial-state >
   {{ cart | json }}
