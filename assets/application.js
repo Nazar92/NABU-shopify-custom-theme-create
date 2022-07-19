@@ -82,9 +82,12 @@ $(document).ready(function () {
     })
 
     $("#AddToCart").click(function(){
-    setTimeout(function() {
-        $('.cart-modal').show();
-    }, 1500);
+        setTimeout(function() {
+            $('.cart-modal').show();
+        }, 1500);
+    });
+    $(".close-cart-popup").click(function(){
+        $(".cart-modal").hide();
     });
 });
 
@@ -95,6 +98,9 @@ function currencyFormSubmit(event) {
 document.querySelectorAll('.shopify-currency-form select').forEach(function(element) {
     element.addEventListener('change', currencyFormSubmit);
 });
+
+
+
 
 let cartContent = $('.cart-modal-content');
 
@@ -119,10 +125,6 @@ function buildCartModalContent(products) {
 }
 
 $(document).on('cartUpdate', function() {
-
-    $(".close-cart-popup").click(function(){
-        $(".cart-modal").hide();
-    });
     $.ajax({
         url: '/cart.js',
         dataType: 'json'
