@@ -1,6 +1,5 @@
 
 $(document).ready(function () {
-
     let customPositionProductsSlider = new Swiper('.custom-products-slider', {
         slidesPerView: 1,
         loop: true,
@@ -11,7 +10,6 @@ $(document).ready(function () {
         let slideIndex = $(this).data('index') - 1;
         customPositionProductsSlider.slideTo( slideIndex, 100);
     });
-
 
     let hpPopularProductsSlider = new Swiper('.popular-products-slider', {
         slidesPerView: 1,
@@ -34,9 +32,6 @@ $(document).ready(function () {
         slidesPerView: 1,
         loop: true,
         spaceBetween: 0,
-        // autoplay: {
-        //     delay: 3000,
-        // },
         navigation: {
             nextEl: '.btn-pp-next',
             prevEl: '.btn-pp-prev'
@@ -53,6 +48,7 @@ $(document).ready(function () {
             }
         }
     });
+
     let productSlider = new Swiper('.product-slider', {
         slidesPerView: 1,
         loop: true,
@@ -86,8 +82,6 @@ $(document).ready(function () {
     })
 });
 
-
-
 // Multicarency
 function currencyFormSubmit(event) {
     event.target.form.submit();
@@ -96,28 +90,38 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
     element.addEventListener('change', currencyFormSubmit);
 });
 
-// Ajax cart
-// function addItem(form_id) {
-//     $.ajax({
-//         type: 'POST',
-//         url: '/cart/add.js',
-//         dataType: 'json',
-//         data: $('#'+form_id).serialize(),
-//         success: addToCartOk,
-//         error: addToCartFail
-//     });
-// }
+let cartContent = $('.cart-modal-content');
 
-// $(document).on('cartUpdate', function() {
-//     $.ajax({
-//         url: '/cart.js',
-//         dataType: 'json'
-//     }).done(function(data){
-//         if (data.items.length > 0) {
-//             cartContent.html(buildCartModalContent(data.items));
-//         }
-//     });
-// });
+function buildCartModalContent(products) {
+    let htmlContent = '';
+    // assign ozNumber = variant.title | split: " " | first;
+
+    products.forEach(function (product) {
+        htmlContent += '<div class="cart-modal-item">\n' +
+            '<div class="item-image">\n' +
+            '<img src="' + product.featured_image.url + '">\n' +
+            '</div>\n' +
+            '<div class="item-title">\n' +
+            '<h2>' + product.product_title + '</h2>\n' +
+            '</div>\n' +
+            '<div class="product-price item-price">\n' +
+            '<p>' + ' ' + Shopify.formatMoney(product.price) + '</p>\n' +
+            '</div>\n' +
+            '</div>\n';
+    });
+    return htmlContent;
+}
+
+$(document).on('cartUpdate', function() {
+    $.ajax({
+        url: '/cart.js',
+        dataType: 'json'
+    }).done(function(data){
+        if (data.items.length > 0) {
+            cartContent.html(buildCartModalContent(data.items));
+        }
+    });
+});
 
 
 
