@@ -18,11 +18,6 @@
 
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }}
 
-  <!-- Only include one of the below in your theme. -->
-  {% comment %}<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/1.1.0/cart.min.js"></script>{% endcomment %}
-  {% comment %}<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/1.1.0/rivets-cart.min.js"></script>{% endcomment %}
-
-
   <script type="application/json" data-ajax-cart-initial-state >
   {{ cart | json }}
 </script>
@@ -39,7 +34,7 @@
 
   <div class="my-floating-cart"> {% section 'floating-cart' %} </div>
 
-  
+
 
   <style>
     .my-floating-cart { display: none; }
@@ -55,12 +50,6 @@
 
   <script src="{{ 'application.js' | asset_url }}"></script>
 
-
-
-
-  <!-- Include jQuery from Google's CDN. -->
-  <!-- Your theme may already include jQuery - if so, you can skip this line. -->
-  {% comment %}{{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' | script_tag }}{% endcomment %}
 
   <!-- Include Cart.js -->
   {{ 'cart.min.js' | asset_url | script_tag }}
