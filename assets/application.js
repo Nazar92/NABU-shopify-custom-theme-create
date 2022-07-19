@@ -106,7 +106,6 @@ let cartContent = $('.cart-modal-content');
 
 function buildCartModalContent(products) {
     let htmlContent = '';
-    // assign ozNumber = variant.title | split: " " | first;
 
     products.forEach(function (product) {
         htmlContent += '<div class="cart-modal-item">\n' +
