@@ -23,13 +23,13 @@
   {% comment %}<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/1.1.0/rivets-cart.min.js"></script>{% endcomment %}
 
 
-  <script type="application/json" data-ajax-cart-initial-state >
-  {{ cart | json }}
-</script>
+  {% comment %}<script type="application/json" data-ajax-cart-initial-state >{% endcomment %}
+  {% comment %}{{ cart | json }}{% endcomment %}
+{% comment %}</script>{% endcomment %}
 
-  <script type="module">
-    import '{{ "liquid-ajax-cart-v1.10.0.js" | asset_url }}';
-  </script>
+  {% comment %}<script type="module">{% endcomment %}
+    {% comment %}import '{{ "liquid-ajax-cart-v1.10.0.js" | asset_url }}';{% endcomment %}
+  {% comment %}</script>{% endcomment %}
 
   {% section 'theme-settings' %}
 </head>
