@@ -1,6 +1,5 @@
 
 $(document).ready(function () {
-
     let customPositionProductsSlider = new Swiper('.custom-products-slider', {
         slidesPerView: 1,
         loop: true,
@@ -11,7 +10,6 @@ $(document).ready(function () {
         let slideIndex = $(this).data('index') - 1;
         customPositionProductsSlider.slideTo( slideIndex, 100);
     });
-
 
     let hpPopularProductsSlider = new Swiper('.popular-products-slider', {
         slidesPerView: 1,
@@ -34,9 +32,6 @@ $(document).ready(function () {
         slidesPerView: 1,
         loop: true,
         spaceBetween: 0,
-        // autoplay: {
-        //     delay: 3000,
-        // },
         navigation: {
             nextEl: '.btn-pp-next',
             prevEl: '.btn-pp-prev'
@@ -53,6 +48,7 @@ $(document).ready(function () {
             }
         }
     });
+
     let productSlider = new Swiper('.product-slider', {
         slidesPerView: 1,
         loop: true,
@@ -84,9 +80,16 @@ $(document).ready(function () {
     $('.mobile-menu-container .fa-times').click(function (){
         $('.mobile-menu').removeClass('openMenu');
     })
+
+    $("#AddToCart").click(function(){
+        setTimeout(function() {
+            $('.cart-modal').show();
+        }, 1500);
+    });
+    $(".close-cart-popup").click(function(){
+        $(".cart-modal").hide();
+    });
 });
-
-
 
 // Multicarency
 function currencyFormSubmit(event) {
@@ -95,30 +98,6 @@ function currencyFormSubmit(event) {
 document.querySelectorAll('.shopify-currency-form select').forEach(function(element) {
     element.addEventListener('change', currencyFormSubmit);
 });
-
-// Ajax cart
-// function addItem(form_id) {
-//     $.ajax({
-//         type: 'POST',
-//         url: '/cart/add.js',
-//         dataType: 'json',
-//         data: $('#'+form_id).serialize(),
-//         success: addToCartOk,
-//         error: addToCartFail
-//     });
-// }
-
-// $(document).on('cartUpdate', function() {
-//     $.ajax({
-//         url: '/cart.js',
-//         dataType: 'json'
-//     }).done(function(data){
-//         if (data.items.length > 0) {
-//             cartContent.html(buildCartModalContent(data.items));
-//         }
-//     });
-// });
-
 
 
 
