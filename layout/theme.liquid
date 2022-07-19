@@ -36,21 +36,9 @@
 
   <script src="{{ 'application.js' | asset_url }}"></script>
 
-
-  <!-- Include Cart.js -->
-  {{ 'cart.min.js' | asset_url | script_tag }}
-
-  <!-- Initialise Cart.js once the page has loaded -->
-  <script type="text/javascript">
-    jQuery(function() {
-      CartJS.init({{ cart | json }});
-    });
-  </script>
-
-
   <script type="application/json" data-ajax-cart-initial-state >
   {{ cart | json }}
-</script>
+  </script>
 
   <script type="module">
     import '{{ "liquid-ajax-cart-v1.10.2.js" | asset_url }}';
