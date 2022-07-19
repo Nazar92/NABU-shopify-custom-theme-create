@@ -80,6 +80,12 @@ $(document).ready(function () {
     $('.mobile-menu-container .fa-times').click(function (){
         $('.mobile-menu').removeClass('openMenu');
     })
+
+    $("#AddToCart").click(function(){
+    setTimeout(function() {
+        $('.cart-modal').show();
+    }, 1500);
+    });
 });
 
 // Multicarency
@@ -113,11 +119,6 @@ function buildCartModalContent(products) {
 }
 
 $(document).on('cartUpdate', function() {
-    // $("#AddToCart").click(function(){
-        setTimeout(function() {
-            $('.cart-modal').show();
-        }, 1500);
-    // });
 
     $(".close-cart-popup").click(function(){
         $(".cart-modal").hide();
