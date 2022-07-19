@@ -101,39 +101,3 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 
 
 
-
-let cartContent = $('.cart-modal-content');
-
-function buildCartModalContent(products) {
-    let htmlContent = '';
-
-    products.forEach(function (product) {
-        htmlContent += '<div class="cart-modal-item">\n' +
-            '<div class="item-image">\n' +
-            '<img src="' + product.featured_image.url + '">\n' +
-            '</div>\n' +
-            '<div class="item-title">\n' +
-            '<h2>' + product.product_title + '</h2>\n' +
-            '</div>\n' +
-            '<div class="product-price item-price">\n' +
-            '<p>' + ' ' + Shopify.formatMoney(product.price) + '</p>\n' +
-            '</div>\n' +
-            '</div>\n';
-    });
-    return htmlContent;
-}
-
-$(document).on('cartUpdate', function() {
-    $.ajax({
-        url: '/cart.js',
-        dataType: 'json'
-    }).done(function(data){
-        if (data.items.length > 0) {
-            cartContent.html(buildCartModalContent(data.items));
-        }
-    });
-});
-
-
-
-
