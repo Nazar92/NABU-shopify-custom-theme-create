@@ -20,7 +20,7 @@
                 </div>
                 <p class="product-price">{{ product.price | money }}</p>
                 <div class="product-buttons">
-                  <a href="{{ product.url }}" class="btn btn-view-product">View product</a>
+                  <a href="{{ product.url }}" class="btn btn-view-product btn-default">View product</a>
                   {% if section.settings.buy-now != blank %}
                     <p data-variant-id="{{ product.selected_or_first_available_variant.id }}"
                        class="btn btn-view-product buy-product btn-green"
