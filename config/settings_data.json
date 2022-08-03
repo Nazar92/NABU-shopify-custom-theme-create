@@ -73,6 +73,7 @@
       "1640173596fa70b98f": {
         "type": "product-slider",
         "settings": {
+          "buy-now": true,
           "slider-title": "Discounted collection"
         }
       },
