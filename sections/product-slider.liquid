@@ -21,6 +21,12 @@
                 <p class="product-price">{{ product.price | money }}</p>
                 <div class="product-buttons">
                   <a href="{{ product.url }}" class="btn btn-view-product">View product</a>
+                  <p data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                     class="button-blue product-header-order-button buy-product"
+                  >
+                    Buy now - {{ product.price | money }}
+                  </p>
+
                 </div>
               </div>
             </div>
@@ -30,6 +36,29 @@
     </div>
   </div>
 </div>
+
+<style>
+  .isDisabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+</style>
+<script>
+  $('.buy-product').on('click', function () {
+    $('.buy-product').addClass('isDisabled');
+    let variant_id = $(this).data('variant-id');
+    $.ajax({
+      type: "POST",
+      url: window.Shopify.routes.root + 'cart/add.js',
+      data: {items: [{id: variant_id, quantity: 1}]},
+      success: () => {
+        window.location = window.location.origin + '/checkout'
+      }
+    });
+  })
+
+</script>
+
 
 {% schema %}
   {
