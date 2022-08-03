@@ -255,8 +255,8 @@ input {
   outline: none;
 
   &.btn-default{
-    color: $black;
-    background: $ltGray;
+    color: $white;
+    background: $black;
   }
 
   &.btn-white{
@@ -267,6 +267,10 @@ input {
   &.btn-red{
     color: $white;
     background: $red;
+  }
+  &.btn-green{
+    color: $white;
+    background: $green;
   }
   &.btn-shop-primary{
     margin-bottom: 10px;
@@ -292,8 +296,6 @@ input {
     padding: 10px 15px;
     font-size: 12px;
     line-height: 1;
-    background: $black;
-    color: $white;
   }
 
   &.btn-checkout{
@@ -1566,8 +1568,11 @@ header{
           max-height: 200px;
         }
       }
-      div{
-        padding: 10px 0;
+      .product-buttons{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
       }
 
       .product-item-title{
