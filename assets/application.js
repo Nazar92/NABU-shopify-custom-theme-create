@@ -89,6 +89,19 @@ $(document).ready(function () {
     $(".close-cart-popup").click(function(){
         $(".cart-modal").hide();
     });
+
+    $('.buy-product').on('click', function () {
+        $('.buy-product').addClass('isDisabled');
+        let variant_id = $(this).data('variant-id');
+        $.ajax({
+            type: "POST",
+            url: window.Shopify.routes.root + 'cart/add.js',
+            data: {items: [{id: variant_id, quantity: 1}]},
+            success: () => {
+                window.location = window.location.origin + '/checkout'
+            }
+        });
+    })
 });
 
 // Multicarency
