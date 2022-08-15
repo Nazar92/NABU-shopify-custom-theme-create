@@ -80,6 +80,7 @@
       "1641633282f3c4914f": {
         "type": "collection-slider",
         "settings": {
+          "buy-now": true,
           "slider-title": "Collection product slider",
           "product-collection": "slider"
         }
