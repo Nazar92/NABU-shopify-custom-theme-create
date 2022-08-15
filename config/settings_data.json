@@ -73,12 +73,14 @@
       "1640173596fa70b98f": {
         "type": "product-slider",
         "settings": {
+          "buy-now": true,
           "slider-title": "Discounted collection"
         }
       },
       "1641633282f3c4914f": {
         "type": "collection-slider",
         "settings": {
+          "buy-now": true,
           "slider-title": "Collection product slider",
           "product-collection": "slider"
         }
