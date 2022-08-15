@@ -149,7 +149,7 @@
           "26fa138c-d805-4b34-a883-05d2ea2edf9c"
         ],
         "settings": {
-          "in-container": true,
+          "in-container": false,
           "title": "Test section",
           "main-img": "shopify:\/\/shop_images\/2021-12-22_16-33.webp"
         }
