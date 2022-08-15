@@ -10,7 +10,7 @@
           <img class="main-img" src="{{ section.settings.main-img | img_url: "master" }}" alt="">
               {% for block in section.blocks %}
                 <p class="custom-product-btn"
-                   style="position: absolute; left: {{ block.settings.horisontal-position }}%; top: {{ block.settings.vertical-position }}%;"
+                   style="position: absolute; left: {{ block.settings.horisontal-position }}%; top: {{ block.settings.vertical-position }}%;background-color: {{ section.settings.bg_point }}"
                    data-index="{{ forloop.index }}"
                 >
                 </p>
@@ -95,6 +95,11 @@
             "max": 100,
             "step": 1,
             "default": 5
+          },
+          {
+            "type": "color",
+            "id": "bg_point",
+            "label": "Point background"
           },
           {
             "type": "text",
