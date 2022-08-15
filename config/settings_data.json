@@ -112,6 +112,9 @@
               "current-product": "test-1",
               "horisontal-position": 33,
               "vertical-position": 14,
+              "point-opacity": 100,
+              "bg_point": "#e22120",
+              "point-animation": true,
               "current-title": "",
               "current-description": "",
               "current-button": "",
@@ -124,6 +127,9 @@
               "current-product": "test-2",
               "horisontal-position": 39,
               "vertical-position": 61,
+              "point-opacity": 89,
+              "bg_point": "#1878b9",
+              "point-animation": true,
               "current-title": "",
               "current-description": "",
               "current-button": "",
@@ -136,6 +142,9 @@
               "current-product": "test-5",
               "horisontal-position": 55,
               "vertical-position": 62,
+              "point-opacity": 87,
+              "bg_point": "#222222",
+              "point-animation": true,
               "current-title": "",
               "current-description": "",
               "current-button": "",
@@ -149,7 +158,7 @@
           "26fa138c-d805-4b34-a883-05d2ea2edf9c"
         ],
         "settings": {
-          "in-container": true,
+          "in-container": false,
           "title": "Test section",
           "main-img": "shopify:\/\/shop_images\/2021-12-22_16-33.webp"
         }
