@@ -9,10 +9,11 @@
         <div class="main-img-container">
           <img class="main-img" src="{{ section.settings.main-img | img_url: "master" }}" alt="">
               {% for block in section.blocks %}
-                <p class="custom-product-btn"
-                   style="position: absolute; left: {{ block.settings.horisontal-position }}%; top: {{ block.settings.vertical-position }}%;"
+                <p class="custom-product-btn {% if block.settings.point-animation != blank %}pulse{% endif %}"
+                   style="position: absolute; left: {{ block.settings.horisontal-position }}%; top: {{ block.settings.vertical-position }}%;background: {{ block.settings.bg_point }}; opacity: {{ block.settings.point-opacity }}%;"
                    data-index="{{ forloop.index }}"
-                ><img style="width: 20px;" src="https://cdn.shopify.com/s/files/1/0552/4530/7978/files/Dot-PNG-Picture.png?v=1656687320" alt=""></p>
+                >
+                </p>
               {% endfor %}
         </div>
         <div class="custom-product-slider-container">
@@ -94,6 +95,25 @@
             "max": 100,
             "step": 1,
             "default": 5
+          },
+          {
+            "id": "point-opacity",
+            "type": "range",
+            "label": "Point opacity",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 50
+          },
+          {
+            "type": "color",
+            "id": "bg_point",
+            "label": "Point background"
+          },
+          {
+            "type": "checkbox",
+            "id": "point-animation",
+            "label": "Point animation"
           },
           {
             "type": "text",
