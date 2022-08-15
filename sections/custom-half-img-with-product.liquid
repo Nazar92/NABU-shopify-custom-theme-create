@@ -10,7 +10,7 @@
           <img class="main-img" src="{{ section.settings.main-img | img_url: "master" }}" alt="">
               {% for block in section.blocks %}
                 <p class="custom-product-btn {% if block.settings.point-animation != blank %}pulse{% endif %}"
-                   style="position: absolute; left: {{ block.settings.horisontal-position }}%; top: {{ block.settings.vertical-position }}%;background: {{ block.settings.bg_point }};"
+                   style="position: absolute; left: {{ block.settings.horisontal-position }}%; top: {{ block.settings.vertical-position }}%;background: {{ block.settings.bg_point }}; opacity: {{ block.settings.point-opacity }}%;"
                    data-index="{{ forloop.index }}"
                 >
                 </p>
@@ -95,6 +95,15 @@
             "max": 100,
             "step": 1,
             "default": 5
+          },
+          {
+            "id": "point-opacity",
+            "type": "range",
+            "label": "Point opacity",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 50
           },
           {
             "type": "color",
