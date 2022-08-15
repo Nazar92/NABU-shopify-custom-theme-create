@@ -10,7 +10,7 @@
           <img class="main-img" src="{{ section.settings.main-img | img_url: "master" }}" alt="">
               {% for block in section.blocks %}
                 <p class="custom-product-btn"
-                   style="position: absolute; left: {{ block.settings.horisontal-position }}%; top: {{ block.settings.vertical-position }}%;background: {{ section.settings.bg_point }};"
+                   style="position: absolute; left: {{ block.settings.horisontal-position }}%; top: {{ block.settings.vertical-position }}%;background: {{ block.settings.bg_point }};"
                    data-index="{{ forloop.index }}"
                 >
                 </p>
