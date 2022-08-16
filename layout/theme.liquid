@@ -18,8 +18,9 @@
   <script type="application/json" data-ajax-cart-initial-state >
   {{ cart | json }}
 </script>
+  <link rel="stylesheet" href="{{ 'theme-settings.css.liquid' | asset_url }}">
 
-  {% section 'theme-settings' %}
+  {% comment %}{% section 'theme-settings' %}{% endcomment %}
 </head>
 <body>
 
