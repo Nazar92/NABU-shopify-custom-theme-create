@@ -1,25 +1,25 @@
 h1{
-    font-size: {{ settings.h1-size }}px !important;
-    color: {{ settings.h1-color }} !important;
+    font-size: {{ section.settings.h1-size }}px !important;
+    color: {{ section.settings.h1-color }} !important;
 }
 h2{
-    font-size: {{ settings.h2-size }}px !important;
-    color: {{ settings.h2-color }} !important;
+    font-size: {{ section.settings.h2-size }}px !important;
+    color: {{ section.settings.h2-color }} !important;
 }
 h1, h2, h3, h4, h5, h6{
-    font-family: {{ settings.heading_font.family }}
+    font-family: {{ section.settings.heading_font.family }}
 }
-{{ settings.heading_font | font_face }}
-{{ settings.body_font | font_face }}
+{{ section.settings.heading_font | font_face }}
+{{ section.settings.body_font | font_face }}
 
 body{
-    font-family: {{ settings.body_font.family }} !important;
+    font-family: {{ section.settings.body_font.family }} !important;
 }
 @media screen and (max-width: 767px) {
     h1{
-        font-size: {{ settings.h1-size-mobile }}px !important;
+        font-size: {{ section.settings.h1-size-mobile }}px !important;
     }
     h2{
-        font-size: {{ settings.h2-size-mobile }}px !important;
+        font-size: {{ section.settings.h2-size-mobile }}px !important;
     }
 }
