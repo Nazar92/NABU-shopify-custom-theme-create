@@ -1,7 +1,8 @@
 {
   "current": {
     "h2-size": 46,
-    "h2-color": "#e22120",
+    "h2-size-mobile": 37,
+    "h2-color": "#1878b9",
     "sections": {
       "163993588734b31af9": {
         "type": "hero-slider",
@@ -95,14 +96,6 @@
       "theme-settings": {
         "type": "theme-settings",
         "settings": {
-          "heading_font": "helvetica_n4",
-          "body_font": "helvetica_n4",
-          "h1-size": 25,
-          "h1-size-mobile": 25,
-          "h1-color": "#222222",
-          "h2-size": 25,
-          "h2-size-mobile": 25,
-          "h2-color": "#222222"
         }
       },
       "16581338822ab286e2": {
