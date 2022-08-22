@@ -113,4 +113,8 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 });
 
 
+// Render cart onChange
+
+
+
 
