@@ -102,6 +102,31 @@ $(document).ready(function () {
             }
         });
     })
+
+
+// Render cart onChange
+
+    const renderingCart = () => {
+        fetch('/cart.js')
+            .then(response => response.json())
+            .then(cart => {
+                window.getSectionsToRender(cart)
+                window.refreshCart(cart)
+            })
+    }
+
+
+    let getSectionsToRender = []
+
+    getSectionsToRender(){
+        return[
+
+        ]
+    }
+
+
+
+
 });
 
 // Multicarency
@@ -112,14 +137,5 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
     element.addEventListener('change', currencyFormSubmit);
 });
 
-
-// Render cart onChange
-let getSectionsToRender = []
-
-getSectionsToRender(){
-    return[
-
-    ]
-}
 
 
