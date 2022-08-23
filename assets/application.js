@@ -144,6 +144,6 @@ fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
         return response.text();
     })
     .then((state) => {
-        const parsedState - JSON.parse(state);
+        const parsedState = JSON.parse(state);
         document.getElementById('shopify-section-rendering-cart').innerHTML = parsedState.sections['main'];
     });
