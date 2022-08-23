@@ -139,5 +139,10 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
     element.addEventListener('change', currencyFormSubmit);
 });
 
-
-
+fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
+    .then((response) => {
+        return response.text();
+    })
+    .then((state) => {
+        const parsedState - JSON.parse(state);
+    })
