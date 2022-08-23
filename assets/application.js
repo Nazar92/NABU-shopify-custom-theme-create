@@ -118,13 +118,6 @@ $(document).ready(function () {
     fetch('/products/product-handle?section_id=product-template')
 
 
-    let getSectionsToRender = []
-
-    getSectionsToRender(){
-        return[
-
-        ]
-    }
 
 
 
