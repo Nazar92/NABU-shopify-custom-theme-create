@@ -133,42 +133,6 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 });
 
 
-getSectionsToRender() {
-    return [
-        {
-            id: 'main-cart-items',
-            section: document.getElementById('main-cart-items').dataset.id || 'main-cart-items',
-            selector: '.js-contents',
-        },
-        {
-            id: 'cart-icon-bubble',
-            section: 'cart-icon-bubble',
-            selector: '.shopify-section'
-        },
-        {
-            id: 'cart-live-region-text',
-            section: 'cart-live-region-text',
-            selector: '.shopify-section'
-        },
-        {
-            id: 'main-cart-footer',
-            section: document.getElementById('main-cart-footer').dataset.id || 'main-cart-footer',
-            selector: '#main-cart-footer',
-        }
-    ];
-
-
-
-updateQuantity(line, quantity, name) {
-    this.enableLoading(line);
-
-    const body = JSON.stringify({
-        line,
-        quantity,
-        sections: this.getSectionsToRender().map((section) => section.section),
-        sections_url: window.location.pathname
-    });
-
 
 
 fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
@@ -179,8 +143,6 @@ fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
         const parsedState = JSON.parse(state);
         document.getElementById('rendering-cart').innerHTML = parsedState.sections['main'];
     });
-
-    }
 
 
 
