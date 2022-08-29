@@ -147,25 +147,25 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 
 
 
-    updateQuantity(line, quantity, name) {
-        this.enableLoading(line);
-
-        const body = JSON.stringify({
-            line,
-            quantity,
-            sections: this.getSectionsToRender().map((section) => section.section),
-            sections_url: window.location.pathname
-        });
-
-        fetch(`${cart/change.js}`, {...fetchConfig(), ...{ body }})
-            .then((response) => {
-                return response.text();
-            })
-            .then((state) => {
-                const parsedState = JSON.parse(state);
-                console.log(parsedState.sections);
-            });
-    }
+    // updateQuantity(line, quantity, name) {
+    //     this.enableLoading(line);
+    //
+    //     const body = JSON.stringify({
+    //         line,
+    //         quantity,
+    //         sections: this.getSectionsToRender().map((section) => section.section),
+    //         sections_url: window.location.pathname
+    //     });
+    //
+    //     fetch(`${cart/change.js}`, {...fetchConfig(), ...{ body }})
+    //         .then((response) => {
+    //             return response.text();
+    //         })
+    //         .then((state) => {
+    //             const parsedState = JSON.parse(state);
+    //             console.log(parsedState.sections);
+    //         });
+    // }
 
 
 
