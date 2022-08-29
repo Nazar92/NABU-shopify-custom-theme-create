@@ -36,7 +36,9 @@
                             </td>
                             <td>
                                 {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
-                                {{ item.line_price | money }}
+                                {% comment %}{{ item.line_price | money }}{% endcomment %}
+                                <div>Total: <strong>{{ item.final_line_price | money }}</strong></div>
+
                                 {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
                             </td>
                         </tr>
@@ -45,7 +47,6 @@
                 </table>
                 <div>
                     <p>sub total : {{ cart.total_price | money }}</p>
-                    <div>Total: <strong>{{ item.final_line_price | money }}</strong></div>
 
                     <button type="submit" name="update">Update</button>
                     <button type="submit" name="checkout">Checkout</button>
