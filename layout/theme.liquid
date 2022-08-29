@@ -38,9 +38,9 @@
   {% comment %}{{ cart | json }}{% endcomment %}
   {% comment %}</script>{% endcomment %}
 
-  {% comment %}<script type="module">{% endcomment %}
-    {% comment %}import '{{ "liquid-ajax-cart-v1.10.2.js" | asset_url }}';{% endcomment %}
-  {% comment %}</script>{% endcomment %}
+  <script type="module">
+    import '{{ "liquid-ajax-cart-v1.10.2.js" | asset_url }}';
+  </script>
 
 </body>
 </html>
