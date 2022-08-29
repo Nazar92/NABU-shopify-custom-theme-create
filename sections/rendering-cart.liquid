@@ -1,11 +1,11 @@
-<script src="{{ 'cart.js' | asset_url }}"></script>
+{% comment %}<script src="{{ 'cart.js' | asset_url }}"></script>{% endcomment %}
 
-<section id="shopify-section-{{ section-id }}" class="rendering-cart cart" data-ajax-cart-section>
+<section id="shopify-section-{{ section-id }}" class="rendering-cart " >
     <div class="container">
         {% if cart.item_count > 0 %}
             <h1>cart</h1>
-            <form class="main-cart-items" action="{{ routes.cart_url }}" method="post" novalidate>
-                <table>
+            <form class="main-cart-items cart" action="{{ routes.cart_url }}" method="post" novalidate>
+                <table data-ajax-cart-section>
                     <thead>
                     <th colspan="2">Prod</th>
                     <th>Price</th>
