@@ -167,29 +167,6 @@ fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
     // }
 
 
-let sectionsToUpdate = 'ajax-cart';
-
-let requestBody = {
-    'items': [{
-        'id': 36110175633573,
-        'quantity': 2
-    }],
-    'sections': sectionsToUpdate
-};
-
-fetch('/cart/add.js', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(requestBody)
-}).then(response => {
-    return response.json();
-}).then(data => {
-    console.log(data.sections); // prints HTML of the section
-}).catch((error) => {
-    console.error('Error:', error);
-});
 
 
 
