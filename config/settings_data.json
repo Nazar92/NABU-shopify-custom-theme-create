@@ -7,17 +7,6 @@
       "163993588734b31af9": {
         "type": "hero-slider",
         "blocks": {
-          "f4ef32d5-b4d2-4377-b77a-78190bac623d": {
-            "type": "slide",
-            "settings": {
-              "background_image": "shopify:\/\/shop_images\/shapka-1024x741.jpg",
-              "title": "Heading",
-              "boldtitle": "Introduce customers to your shop with lifestyle and product imagery",
-              "button_primary_label": "Shop Now",
-              "button_primary_link": "",
-              "button_secondary_label": "Shop Now Bundle"
-            }
-          },
           "e0413ea4-6e2f-4c36-aa8f-56baf454fce6": {
             "type": "slide",
             "settings": {
@@ -28,11 +17,22 @@
               "button_primary_link": "",
               "button_secondary_label": "Shop Now Bundle"
             }
+          },
+          "f4ef32d5-b4d2-4377-b77a-78190bac623d": {
+            "type": "slide",
+            "settings": {
+              "background_image": "shopify:\/\/shop_images\/shapka-1024x741.jpg",
+              "title": "Heading",
+              "boldtitle": "Introduce customers to your shop with lifestyle and product imagery",
+              "button_primary_label": "Shop Now",
+              "button_primary_link": "",
+              "button_secondary_label": "Shop Now Bundle"
+            }
           }
         },
         "block_order": [
-          "f4ef32d5-b4d2-4377-b77a-78190bac623d",
-          "e0413ea4-6e2f-4c36-aa8f-56baf454fce6"
+          "e0413ea4-6e2f-4c36-aa8f-56baf454fce6",
+          "f4ef32d5-b4d2-4377-b77a-78190bac623d"
         ],
         "settings": {
           "enable_autoplay": true,
@@ -161,9 +161,9 @@
     },
     "content_for_index": [
       "163993588734b31af9",
-      "1640173596fa70b98f",
       "1641633282f3c4914f",
-      "16581338822ab286e2"
+      "16581338822ab286e2",
+      "1640173596fa70b98f"
     ]
   },
   "presets": {
