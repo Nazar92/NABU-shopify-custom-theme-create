@@ -27,7 +27,12 @@
                             </td>
                             <td>{{ item.price | money }}</td>
                             <td>
-                                <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
+                                <input data-ajax-cart-quantity-input="{{ forloop.index }}"
+                                       type="number"
+                                       name="updates[]"
+                                       id="updates_{{ item.key }}"
+                                       value="{{ item.quantity }}"
+                                       min="0">
                             </td>
                             <td>
                                 {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
