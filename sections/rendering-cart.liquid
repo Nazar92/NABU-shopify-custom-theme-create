@@ -1,6 +1,6 @@
 <script src="{{ 'cart.js' | asset_url }}"></script>
 
-<section id="shopify-section-{{ section-id }}" class="rendering-cart">
+<section id="shopify-section-{{ section-id }}" class="rendering-cart"data-ajax-cart-request-button>
     <div class="container">
         {% if cart.item_count > 0 %}
             <h1>cart</h1>
