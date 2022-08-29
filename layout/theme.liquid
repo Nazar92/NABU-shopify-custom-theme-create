@@ -34,9 +34,9 @@
   {% comment %}<script src="{{ 'cart.js' | asset_url }}"></script>{% endcomment %}
   <script src="{{ 'application.js' | asset_url }}"></script>
 
-  {% comment %}<script type="application/json" data-ajax-cart-initial-state >{% endcomment %}
-  {% comment %}{{ cart | json }}{% endcomment %}
-  {% comment %}</script>{% endcomment %}
+  <script type="application/json" data-ajax-cart-initial-state >
+  {{ cart | json }}
+  </script>
 
   <script type="module">
     import '{{ "liquid-ajax-cart-v1.10.2.js" | asset_url }}';
