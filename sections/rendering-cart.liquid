@@ -27,20 +27,18 @@
                             </td>
                             <td>{{ item.price | money }}</td>
                             <td>
-                                <a data-ajax-cart-request-button
-                                   href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}">
-                                    <i class="minus-icon"></i> -
-                                </a>
-                                <input data-ajax-cart-quantity-input="{{ forloop.index }}"
-                                       type="number"
-                                       name="updates[]"
-                                       id="updates_{{ item.key }}"
-                                       value="{{ item.quantity }}"
-                                       min="0">
-                                <a data-ajax-cart-request-button
-                                   href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}">
-                                    <i class="plus-icon"></i>+
-                                </a>
+                                <div>
+                                    Quantity:
+                                    <a data-ajax-cart-request-button
+                                       href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}">
+                                        <i class="minus-icon"></i>
+                                    </a>
+                                    <input data-ajax-cart-quantity-input="{{ forloop.index }}" value="{{ item.quantity }}" name="updates[]" type="number"/>
+                                    <a data-ajax-cart-request-button
+                                       href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}">
+                                        <i class="plus-icon"></i>
+                                    </a>
+                                </div>
                             </td>
                             <td>
                                 {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
