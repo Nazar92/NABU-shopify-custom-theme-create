@@ -49,6 +49,8 @@
 
                                 {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
                             </td>
+                            <div data-ajax-cart-messages="{{ item.key }}"></div>
+
                         </tr>
                     {% endfor %}
                     </tbody>
