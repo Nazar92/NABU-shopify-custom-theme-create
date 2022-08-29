@@ -135,14 +135,14 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 
 
 
-// fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
-//     .then((response) => {
-//         return response.text();
-//     })
-//     .then((state) => {
-//         const parsedState = JSON.parse(state);
-//         document.getElementById('shopify-section-rendering-cart').innerHTML = parsedState.sections['main'];
-//     });
+fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
+    .then((response) => {
+        return response.text();
+    })
+    .then((state) => {
+        const parsedState = JSON.parse(state);
+        document.getElementById('shopify-section-rendering-cart').innerHTML = parsedState.sections['main'];
+    });
 
 
 
