@@ -135,7 +135,7 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 
 let reader = response.body.getReader();
 
-fetch('/cart/change.js', {...fetchConfig(), ...{ reader }})
+fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
     .then((response) => {
         return response.text();
     })
