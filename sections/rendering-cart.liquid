@@ -26,7 +26,6 @@
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
-                      {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
                       <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
                         <div class="cart-item__image-container gradient global-media-settings">
                           <img src="{{ item.image | image_url: width: 300 }}"
@@ -50,13 +49,13 @@
                     {%- if item.original_price != item.final_price -%}
                       <div class="cart-item__discounted-prices">
                         <span class="visually-hidden">
-                          {{ 'products.product.price.regular_price' | t }}
+                          {{ 'products.product.price.regular_price'}}
                         </span>
                         <s class="cart-item__old-price product-option">
                           {{- item.original_price | money -}}
                         </s>
                         <span class="visually-hidden">
-                          {{ 'products.product.price.sale_price' | t }}
+                          {{ 'products.product.price.sale_price' }}
                         </span>
                         <strong class="cart-item__final-price product-option">
                           {{ item.final_price | money }}
