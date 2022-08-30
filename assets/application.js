@@ -106,29 +106,29 @@ $(document).ready(function () {
 
 // Render cart onChange
 
-    const renderingCart = () => {
-        fetch('/cart.js')
-            .then(response => response.json())
-            .then(cart => {
-                window.getSectionsToRender(cart)
-                window.refreshCart(cart)
-            })
-    }
-
-    fetch('/products/product-handle?section_id=product-template')
-
-
+    // const renderingCart = () => {
+    //     fetch('/cart.js')
+    //         .then(response => response.json())
+    //         .then(cart => {
+    //             window.getSectionsToRender(cart)
+    //             window.refreshCart(cart)
+    //         })
+    // }
+    //
+    // fetch('/products/product-handle?section_id=product-template')
 
 
-    getSectionsToRender() {
-        return[
-            {
-                id: 'main-cart-items',
-                section: document.getElementById('main-cart-items').dataset.id,
-                selector: '.js-contents',
-            }
-        ];
-    }
+
+    //
+    // getSectionsToRender() {
+    //     return[
+    //         {
+    //             id: 'main-cart-items',
+    //             section: document.getElementById('main-cart-items').dataset.id,
+    //             selector: '.js-contents',
+    //         }
+    //     ];
+    // }
 
 
 
@@ -160,25 +160,6 @@ fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
 
 
 
-    // updateQuantity(line, quantity, name) {
-    //     this.enableLoading(line);
-    //
-    //     const body = JSON.stringify({
-    //         line,
-    //         quantity,
-    //         sections: this.getSectionsToRender().map((section) => section.section),
-    //         sections_url: window.location.pathname
-    //     });
-    //
-    //     fetch(`${cart/change.js}`, {...fetchConfig(), ...{ body }})
-    //         .then((response) => {
-    //             return response.text();
-    //         })
-    //         .then((state) => {
-    //             const parsedState = JSON.parse(state);
-    //             console.log(parsedState.sections);
-    //         });
-    // }
 
 
 
