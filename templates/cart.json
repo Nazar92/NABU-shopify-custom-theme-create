@@ -4,9 +4,15 @@
       "type": "main-page",
       "settings": {
       }
+    },
+    "166184478807705915": {
+      "type": "rendering-cart",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "166184478807705915"
   ]
 }
