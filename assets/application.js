@@ -120,6 +120,16 @@ $(document).ready(function () {
 
 
 
+    getSectionToRender() {
+        return[
+            {
+                id: 'main-cart-items',
+                section: document.getElementById('main-cart-items').dataset.id,
+                selector: '.js-contents',
+            }
+        ];
+    }
+
 
 
 });
@@ -131,6 +141,10 @@ function currencyFormSubmit(event) {
 document.querySelectorAll('.shopify-currency-form select').forEach(function(element) {
     element.addEventListener('change', currencyFormSubmit);
 });
+
+
+
+
 
 
 
