@@ -120,7 +120,7 @@ $(document).ready(function () {
 
 
 
-    getSectionToRender() {
+    getSectionsToRender() {
         return[
             {
                 id: 'main-cart-items',
