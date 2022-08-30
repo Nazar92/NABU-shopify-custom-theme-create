@@ -5,14 +5,16 @@
       "settings": {
       }
     },
-    "166184478807705915": {
-      "type": "rendering-cart",
+    "16618642566501668b": {
+      "type": "main-cart-items",
       "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "166184478807705915"
+    "16618642566501668b"
   ]
 }
