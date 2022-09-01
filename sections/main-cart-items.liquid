@@ -1,4 +1,5 @@
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+<div class="container">
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
@@ -208,6 +209,7 @@
   </form>
 </cart-items>
 
+</div>
 {% schema %}
 {
   "name": "main cart",
