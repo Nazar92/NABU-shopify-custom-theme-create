@@ -8,6 +8,8 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
+  <script src="{{ 'global.js' | asset_url }}"></script>
+
   {{ content_for_header }}
   <link rel="stylesheet" href="{{ 'application.scss.css' | asset_url }}">
 
@@ -30,9 +32,8 @@
   <main role="main" id="main">
     {{ content_for_layout }}
   </main>
-  <script src="{{ 'cart.js' | asset_url }}"></script>
+  {% comment %}<script src="{{ 'cart.js' | asset_url }}"></script>{% endcomment %}
 
-  <script src="{{ 'global.js' | asset_url }}"></script>
 
   <script src="{{ 'application.js' | asset_url }}"></script>
 
