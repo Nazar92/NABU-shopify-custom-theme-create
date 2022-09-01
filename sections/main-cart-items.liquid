@@ -162,9 +162,7 @@
                       <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                       </label>
                       <quantity-input class="quantity">
-                        <button class="quantity__button no-js-hidden" name="minus" type="button">
-                          -
-                        </button>
+
                         <input class="quantity__input"
                           type="number"
                           name="updates[]"
@@ -174,9 +172,7 @@
                           id="Quantity-{{ item.index | plus: 1 }}"
                           data-index="{{ item.index | plus: 1 }}"
                         >
-                        <button class="quantity__button no-js-hidden" name="plus" type="button">
-                          +
-                        </button>
+
                       </quantity-input>
 
                       <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
