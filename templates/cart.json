@@ -4,9 +4,15 @@
       "type": "main-page",
       "settings": {
       }
+    },
+    "16620380214644cc2c": {
+      "type": "my-cart",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "16620380214644cc2c"
   ]
 }
