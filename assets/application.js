@@ -151,7 +151,7 @@ fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
     .then((state) => {
         const parsedState = JSON.parse(state);
         console.log(parsedState);
-        console.log(parsedState.sections['template--14636169756746__16618642566501668b[5]']);
+        console.log(parsedState.sections['template--14636169756746__16618642566501668b[4]']);
         // document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16618642566501668b'];
     });
 
