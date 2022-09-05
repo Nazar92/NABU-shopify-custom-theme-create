@@ -152,7 +152,7 @@ fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
         const parsedState = JSON.parse(state);
         // console.log(parsedState);
         // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
-        document.getElementById('shopify-section-template--14636169756746__16623759011301efd7').innerHTML = parsedState.sections['main-cart-items'];
+        document.getElementById('main-cart-items').innerHTML = parsedState.sections['main-cart-items'];
     });
 
 
