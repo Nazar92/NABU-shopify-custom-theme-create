@@ -1,11 +1,5 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-      }
-    },
     "16623759011301efd7": {
       "type": "my-custom-cart",
       "settings": {
@@ -13,7 +7,6 @@
     }
   },
   "order": [
-    "main",
     "16623759011301efd7"
   ]
 }
