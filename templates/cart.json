@@ -8,13 +8,11 @@
     },
     "16618642566501668b": {
       "type": "main-cart-items",
-      "disabled": true,
       "settings": {
       }
     },
     "16620383389e944fb5": {
       "type": "main-cart-footer",
-      "disabled": true,
       "settings": {
       }
     },
@@ -26,6 +24,7 @@
     },
     "16623759011301efd7": {
       "type": "my-custom-cart",
+      "disabled": true,
       "settings": {
       }
     }
