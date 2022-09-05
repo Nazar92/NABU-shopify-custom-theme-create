@@ -144,7 +144,12 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 
 
 
-
+const body = JSON.stringify({
+    line,
+    quantity,
+    sections: this.getSectionsToRender().map((section) => section.section),
+    sections_url: window.location.pathname
+});
 
 fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
     .then((response) => {
