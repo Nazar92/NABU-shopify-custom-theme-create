@@ -1,6 +1,6 @@
 <script src="{{ 'cart.js' | asset_url }}"></script>
 
-<div class="container main-cart-items">
+<div class="container" id="main-cart-items">
     {% if cart.item_count > 0 %}
         <h1>cart</h1>
         <form action="/cart" method="post" novalidate>
