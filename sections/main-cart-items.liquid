@@ -1,4 +1,4 @@
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+{% comment %}<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>{% endcomment %}
 <div class="container">
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
