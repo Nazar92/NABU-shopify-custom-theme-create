@@ -142,7 +142,7 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
     element.addEventListener('change', currencyFormSubmit);
 });
 
-
+let body = JSON.stringify({"line":"1","quantity":"3","sections":["template--14636169756746__16618642566501668b","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
 
 fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
     .then((response) => {
@@ -151,7 +151,7 @@ fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
     .then((state) => {
         const parsedState = JSON.parse(state);
         console.log(parsedState);
-        document.getElementById('shopify-section-template--14636169756746__16623759011301efd7').innerHTML = parsedState.sections['main-cart-items'];
+        // document.getElementById('shopify-section-template--14636169756746__16623759011301efd7').innerHTML = parsedState.sections['main-cart-items'];
     });
 
 
