@@ -142,7 +142,7 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
     element.addEventListener('change', currencyFormSubmit);
 });
 
-let body = JSON.stringify({"line":"1","quantity":"3","sections":["template--14636169756746__16618642566501668b","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
+let body = JSON.stringify({"line":"1","quantity":"1","sections":["template--14636169756746__16618642566501668b","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
 
 fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
     .then((response) => {
