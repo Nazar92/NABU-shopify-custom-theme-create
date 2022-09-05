@@ -151,8 +151,8 @@ fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
     .then((state) => {
         const parsedState = JSON.parse(state);
         console.log(parsedState);
-        console.log(parsedState.sections['template--14636169756746__16618642566501668b']);
-        // document.getElementById('main-cart-items').innerHTML = parsedState.sections['template--14636169756746__16618642566501668b'];
+        // console.log(parsedState.sections['template--14636169756746__16618642566501668b']);
+        document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16618642566501668b'];
     });
 
 
