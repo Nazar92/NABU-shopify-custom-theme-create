@@ -171,6 +171,8 @@ $('.cartItemQuantity').on('change', function (){
     }
 
     let body = JSON.stringify({
+        // line,
+        // quantity,
         sections: this.getSectionsToRender().map((section) => section.section),
         sections_url: window.location.pathname
     });
