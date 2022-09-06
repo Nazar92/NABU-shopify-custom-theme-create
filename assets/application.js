@@ -151,6 +151,44 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 });
 
 
+class CartItems extends HTMLElement {
+
+    getSectionsToRender() {
+        return [
+            {
+                id: 'main-cart-items',
+                section: document.getElementById('main-cart-items').dataset.id,
+                selector: '.js-contents',
+            },
+            {
+                id: 'cart-icon-bubble',
+                section: 'cart-icon-bubble',
+                selector: '.shopify-section'
+            },
+            {
+                id: 'cart-live-region-text',
+                section: 'cart-live-region-text',
+                selector: '.shopify-section'
+            },
+            {
+                id: 'main-cart-footer',
+                section: document.getElementById('main-cart-footer').dataset.id,
+                selector: '.js-contents',
+            }
+        ];
+    }
+
+    const body = JSON.stringify({
+        line,
+        quantity,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname
+    });
+
+}
+
+
+
 $('.cartItemQuantity').on('change', function (){
 
     function fetchConfig(type = 'json') {
@@ -160,14 +198,12 @@ $('.cartItemQuantity').on('change', function (){
         };
     }
 
-    // const body = JSON.stringify({
-    //     line,
-    //     quantity,
-    //     sections: this.getSectionsToRender().map((section) => section.section),
-    //     sections_url: window.location.pathname
-    // });
 
-    let body = JSON.stringify({"line":"1","quantity":"15","sections":["template--14636169756746__16623759011301efd7","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
+
+
+
+
+    // let body = JSON.stringify({"line":"1","quantity":"15","sections":["template--14636169756746__16623759011301efd7","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
 
 
     fetch('/cart/change.js', {...fetchConfig(), ...{body}})
