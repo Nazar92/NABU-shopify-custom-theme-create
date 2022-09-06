@@ -153,6 +153,13 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 
 $('.cartItemQuantity').on('change', function (){
 
+    function fetchConfig(type = 'json') {
+        return {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': `application/${type}` }
+        };
+    }
+
     const body = JSON.stringify({
         line,
         quantity,
