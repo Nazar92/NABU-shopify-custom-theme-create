@@ -199,16 +199,7 @@ $('.cartItemQuantity').on('click', function (){
             });
 
 
-            fetch('/cart/change.js', {...fetchConfig(), ...{body}})
-                .then((response) => {
-                    return response.text();
-                })
-                .then((state) => {
-                    const parsedState = JSON.parse(state);
-                    console.log(parsedState);
-                    // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
-                    // document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
-                });
+
 
         }
 
@@ -218,7 +209,16 @@ $('.cartItemQuantity').on('click', function (){
 
     }
 
-
+    fetch('/cart/change.js', {...fetchConfig(), ...{body}})
+        .then((response) => {
+            return response.text();
+        })
+        .then((state) => {
+            const parsedState = JSON.parse(state);
+            console.log(parsedState);
+            // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
+            document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
+        });
 
 
 
@@ -228,16 +228,16 @@ $('.cartItemQuantity').on('click', function (){
     // let body = JSON.stringify({"line":"1","quantity":"15","sections":["template--14636169756746__16623759011301efd7","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
 
 
-    fetch('/cart/change.js', {...fetchConfig(), ...{body}})
-        .then((response) => {
-            return response.text();
-        })
-        .then((state) => {
-            const parsedState = JSON.parse(state);
-            // console.log(parsedState);
-            // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
-            document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
-        });
+    // fetch('/cart/change.js', {...fetchConfig(), ...{body}})
+    //     .then((response) => {
+    //         return response.text();
+    //     })
+    //     .then((state) => {
+    //         const parsedState = JSON.parse(state);
+    //         // console.log(parsedState);
+    //         // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
+    //         document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
+    //     });
 
 
 
