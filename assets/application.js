@@ -152,6 +152,16 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 
 
 $('.cartItemQuantity').on('change', function (){
+    $.ajax({
+        type: "POST",
+        url: window.Shopify.routes.root + 'cart/add.js',
+        data: {items: [{id: variant_id, quantity: 1}]},
+        // success: () => {
+        //     window.location = window.location.origin + '/checkout'
+        // }
+        console.log('ghbdsnsssssssss')
+    });
+
     let body = JSON.stringify({"line":"1","quantity":"15","sections":["template--14636169756746__16623759011301efd7","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
 
     fetch('/cart/change.js', {...fetchConfig(), ...{body}})
