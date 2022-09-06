@@ -151,6 +151,13 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 });
 
 
+function fetchConfig(type = 'json') {
+    return {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': `application/${type}` }
+    };
+}
+
 class CartItems extends HTMLElement {
 
     getSectionsToRender() {
@@ -178,25 +185,20 @@ class CartItems extends HTMLElement {
         ];
     }
 
-    const body = JSON.stringify({
-        line,
-        quantity,
-        sections: this.getSectionsToRender().map((section) => section.section),
-        sections_url: window.location.pathname
-    });
+
 
 }
 
-
+let body = JSON.stringify({
+    line,
+    quantity,
+    sections: this.getSectionsToRender().map((section) => section.section),
+    sections_url: window.location.pathname
+});
 
 $('.cartItemQuantity').on('change', function (){
 
-    function fetchConfig(type = 'json') {
-        return {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': `application/${type}` }
-        };
-    }
+
 
 
 
