@@ -166,21 +166,6 @@ class CartItems extends HTMLElement {
                 id: 'main-cart-items',
                 section: document.getElementById('main-cart-items').dataset.id,
                 selector: '.js-contents',
-            },
-            {
-                id: 'cart-icon-bubble',
-                section: 'cart-icon-bubble',
-                selector: '.shopify-section'
-            },
-            {
-                id: 'cart-live-region-text',
-                section: 'cart-live-region-text',
-                selector: '.shopify-section'
-            },
-            {
-                id: 'main-cart-footer',
-                section: document.getElementById('main-cart-footer').dataset.id,
-                selector: '.js-contents',
             }
         ];
     }
@@ -216,7 +201,7 @@ $('.cartItemQuantity').on('change', function (){
             const parsedState = JSON.parse(state);
             // console.log(parsedState);
             // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
-            document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
+            // document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
         });
 
 
