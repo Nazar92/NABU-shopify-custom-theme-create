@@ -3,7 +3,7 @@
     <div class="container" >
         {% if cart.item_count > 0 %}
             <h1>cart</h1>
-            <form action="/cart" method="post" novalidate class="js-contents">
+            <form action="/cart" method="post" novalidate>
                 <table id="main-cart-items" data-id="{{ section.id }}">
                     <thead>
                     <th colspan="2">Prod</th>
@@ -13,7 +13,7 @@
                     </thead>
                     <tbody>
                     {% for item in cart.items %}
-                        <tr class="cartItem" data-variant-id={{ item.id }}>
+                        <tr class="cartItem js-contents" data-variant-id={{ item.id }}>
                             <td>
                                 <a href="{{ item.url | within: collections.all }}">
                                     <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
