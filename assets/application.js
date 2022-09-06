@@ -160,36 +160,40 @@ $('.cartItemQuantity').on('change', function (){
         };
     }
 
-    const body = JSON.stringify({
-        line,
-        quantity,
-        sections: this.getSectionsToRender().map((section) => section.section),
-        sections_url: window.location.pathname
-    });
+    // const body = JSON.stringify({
+    //     line,
+    //     quantity,
+    //     sections: this.getSectionsToRender().map((section) => section.section),
+    //     sections_url: window.location.pathname
+    // });
 
-    // let body = JSON.stringify({"line":"1","quantity":"15","sections":["template--14636169756746__16623759011301efd7","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
-    let variant_id = $('.cartItem').data('variant-id');
-    let item_quantity = $('.cartItemQuantity').val();
-    $.ajax({
-        type: "POST",
-        // url: window.Shopify.routes.root + 'cart/add.js',
-        // data: {items: [{id: variant_id, quantity: item_quantity }]},
-        success: () => {
-            fetch('/cart/change.js', {...fetchConfig(), ...{body}})
-                .then((response) => {
-                    return response.text();
-                })
-                .then((state) => {
-                    const parsedState = JSON.parse(state);
-                    // console.log(parsedState);
-                    // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
-                    document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
-                });
-        }
-
-    });
+    let body = JSON.stringify({"line":"1","quantity":"15","sections":["template--14636169756746__16623759011301efd7","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
 
 
+    fetch('/cart/change.js', {...fetchConfig(), ...{body}})
+        .then((response) => {
+            return response.text();
+        })
+        .then((state) => {
+            const parsedState = JSON.parse(state);
+            // console.log(parsedState);
+            // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
+            document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
+        });
+
+
+
+    // let variant_id = $('.cartItem').data('variant-id');
+    // let item_quantity = $('.cartItemQuantity').val();
+    // $.ajax({
+    //     type: "POST",
+    //     url: window.Shopify.routes.root + 'cart/add.js',
+    //     data: {items: [{id: variant_id, quantity: item_quantity }]},
+    //     success: () => {
+    //
+    //     }
+    //
+    // });
 
 });
 
