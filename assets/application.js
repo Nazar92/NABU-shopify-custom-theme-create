@@ -159,24 +159,29 @@ function fetchConfig(type = 'json') {
 }
 
 class CartItems extends HTMLElement {
+    constructor() {
 
-    getSectionsToRender() {
-        return [
-            {
-                id: 'main-cart-items',
-                section: document.getElementById('main-cart-items').dataset.id,
-                selector: '.js-contents',
-            }
-        ];
+        getSectionsToRender() {
+            return [
+                {
+                    id: 'main-cart-items',
+                    section: document.getElementById('main-cart-items').dataset.id,
+                    selector: '.js-contents',
+                }
+            ];
+        }
+
+        let body = JSON.stringify({
+            sections: this.getSectionsToRender().map((section) => section.section)
+        });
     }
+
 
 
 
 }
 
-let body = JSON.stringify({
-    sections: this.getSectionsToRender().map((section) => section.section)
-});
+
 
 $('.cartItemQuantity').on('change', function (){
 
