@@ -222,45 +222,45 @@ class CartItems extends HTMLElement {
                 const parsedState = JSON.parse(state);
                 // console.log(parsedState);
                 // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
-                // document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
+                document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
             });
 
-        fetch(`${routes.cart_change_url}`, {...fetchConfig(), ...{ body }})
-            .then((response) => {
-                return response.text();
-            })
-            .then((state) => {
-                const parsedState = JSON.parse(state);
-                this.classList.toggle('is-empty', parsedState.item_count === 0);
-                const cartDrawerWrapper = document.querySelector('cart-drawer');
-                const cartFooter = document.getElementById('main-cart-footer');
-
-                if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
-                if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
-
-                this.getSectionsToRender().forEach((section => {
-                    const elementToReplace =
-                        document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-                    elementToReplace.innerHTML =
-                        this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
-                }));
-
-                this.updateLiveRegions(line, parsedState.item_count);
-                const lineItem =  document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
-                if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
-                    cartDrawerWrapper ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`)) : lineItem.querySelector(`[name="${name}"]`).focus();
-                } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
-                    trapFocus(cartDrawerWrapper.querySelector('.drawer__inner-empty'), cartDrawerWrapper.querySelector('a'))
-                } else if (document.querySelector('.cart-item') && cartDrawerWrapper) {
-                    trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'))
-                }
-                this.disableLoading();
-            }).catch(() => {
-            this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
-            const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
-            // errors.textContent = window.cartStrings.error;
-            this.disableLoading();
-        });
+        // fetch(`${routes.cart_change_url}`, {...fetchConfig(), ...{ body }})
+        //     .then((response) => {
+        //         return response.text();
+        //     })
+        //     .then((state) => {
+        //         const parsedState = JSON.parse(state);
+        //         this.classList.toggle('is-empty', parsedState.item_count === 0);
+        //         const cartDrawerWrapper = document.querySelector('cart-drawer');
+        //         const cartFooter = document.getElementById('main-cart-footer');
+        //
+        //         if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
+        //         if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
+        //
+        //         this.getSectionsToRender().forEach((section => {
+        //             const elementToReplace =
+        //                 document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+        //             elementToReplace.innerHTML =
+        //                 this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+        //         }));
+        //
+        //         this.updateLiveRegions(line, parsedState.item_count);
+        //         const lineItem =  document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
+        //         if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
+        //             cartDrawerWrapper ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`)) : lineItem.querySelector(`[name="${name}"]`).focus();
+        //         } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
+        //             trapFocus(cartDrawerWrapper.querySelector('.drawer__inner-empty'), cartDrawerWrapper.querySelector('a'))
+        //         } else if (document.querySelector('.cart-item') && cartDrawerWrapper) {
+        //             trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'))
+        //         }
+        //         this.disableLoading();
+        //     }).catch(() => {
+        //     this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
+        //     const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
+        //     // errors.textContent = window.cartStrings.error;
+        //     this.disableLoading();
+        // });
     }
 
 
