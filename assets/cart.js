@@ -12,20 +12,20 @@ class CartRemoveButton extends HTMLElement {
 customElements.define('cart-remove-button', CartRemoveButton);
 
 class CartItems extends HTMLElement {
-  constructor() {
-    super();
-
-    this.lineItemStatusElement = document.getElementById('shopping-cart-line-item-status') || document.getElementById('CartDrawer-LineItemStatus');
-
-    this.currentItemCount = Array.from(this.querySelectorAll('[name="updates[]"]'))
-        .reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0);
-
-    this.debouncedOnChange = debounce((event) => {
-      this.onChange(event);
-    }, 300);
-
-    this.addEventListener('change', this.debouncedOnChange.bind(this));
-  }
+  // constructor() {
+  //   super();
+  //
+  //   this.lineItemStatusElement = document.getElementById('shopping-cart-line-item-status') || document.getElementById('CartDrawer-LineItemStatus');
+  //
+  //   this.currentItemCount = Array.from(this.querySelectorAll('[name="updates[]"]'))
+  //       .reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0);
+  //
+  //   this.debouncedOnChange = debounce((event) => {
+  //     this.onChange(event);
+  //   }, 300);
+  //
+  //   this.addEventListener('change', this.debouncedOnChange.bind(this));
+  // }
 
   onChange(event) {
     this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'));
