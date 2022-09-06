@@ -37,11 +37,13 @@
                     {% endfor %}
                     </tbody>
                 </table>
-                <div id="main-cart-footer" data-id="{{ section.id }}">
-                    <input type="textarea" class="cart-note">
-                    <p>sub total : {{ cart.total_price | money }}</p>
-                    <button type="submit" name="update">Update</button>
-                    <button type="submit" name="checkout">Checkout</button>
+                <div id="main-cart-footer" data-id="{{ section.id }}" class="cart-footer">
+                    <div class="js-contents">
+                        <input type="textarea" class="cart-note">
+                        <p>sub total : {{ cart.total_price | money }}</p>
+                        <button type="submit" name="update">Update</button>
+                        <button type="submit" name="checkout">Checkout</button>
+                    </div>
                 </div>
             </form>
         {% else %}
