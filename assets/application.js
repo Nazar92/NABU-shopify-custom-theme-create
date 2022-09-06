@@ -161,7 +161,7 @@ function fetchConfig(type = 'json') {
 
 
 
-$('.cartItemQuantity').on('click', function (){
+$('.cartItemQuantity').on('change', function (){
     class CartItems extends HTMLElement {
         getSectionsToRender() {
             return [
