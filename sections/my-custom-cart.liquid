@@ -13,7 +13,7 @@
                     </thead>
                     <tbody>
                     {% for item in cart.items %}
-                        <tr>
+                        <tr data-variant-id={{ item.id }}>
                             <td>
                                 <a href="{{ item.url | within: collections.all }}">
                                     <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">

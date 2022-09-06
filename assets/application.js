@@ -153,7 +153,7 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 
 $('.cartItemQuantity').on('change', function (){
     let body = JSON.stringify({"line":"1","quantity":"15","sections":["template--14636169756746__16623759011301efd7","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
-    let variant_id =  
+    let variant_id =
 
     $.ajax({
         type: "POST",
