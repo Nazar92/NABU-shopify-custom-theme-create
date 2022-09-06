@@ -169,7 +169,8 @@ $('.cartItemQuantity').on('change', function (){
                     // console.log(parsedState);
                     // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
                     document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
-                });        }
+                });
+        }
 
     });
 
