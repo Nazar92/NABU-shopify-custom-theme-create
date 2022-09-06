@@ -184,14 +184,7 @@ $('.cartItemQuantity').on('change', function (){
 
 
     }
-    class CartItems extends HTMLElement {
 
-
-
-
-
-
-    }
 
     fetch('/cart/change.js', {...fetchConfig(), ...{body}})
         .then((response) => {
