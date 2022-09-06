@@ -175,10 +175,7 @@ class CartItems extends HTMLElement {
 }
 
 let body = JSON.stringify({
-    line,
-    quantity,
-    sections: this.getSectionsToRender().map((section) => section.section),
-    sections_url: window.location.pathname
+    sections: this.getSectionsToRender().map((section) => section.section)
 });
 
 $('.cartItemQuantity').on('change', function (){
