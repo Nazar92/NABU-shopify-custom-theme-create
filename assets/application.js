@@ -158,11 +158,6 @@ function fetchConfig(type = 'json') {
     };
 }
 
-
-
-
-$('.cartItemQuantity').on('change', function (){
-
 class CartItems extends HTMLElement {
     constructor() {
         super();
@@ -240,6 +235,7 @@ class CartItems extends HTMLElement {
 
 
 
+$('.cartItemQuantity').on('change', function (){
 
 
 
