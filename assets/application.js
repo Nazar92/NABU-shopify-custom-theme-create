@@ -142,40 +142,41 @@ function fetchConfig(type = 'json') {
 }
 
 
-
+function getSectionsToRender() {
+    return [
+        {
+            id: 'main-cart-items',
+            section: document.getElementById('main-cart-items').dataset.id,
+            selector: '.js-contents',
+        },
+        {
+            id: 'cart-icon-bubble',
+            section: 'cart-icon-bubble',
+            selector: '.shopify-section'
+        },
+        {
+            id: 'cart-live-region-text',
+            section: 'cart-live-region-text',
+            selector: '.shopify-section'
+        },
+        {
+            id: 'main-cart-footer',
+            section: document.getElementById('main-cart-footer').dataset.id,
+            selector: '.js-contents',
+        }
+    ];
+}
+let body = JSON.stringify({
+    // line,
+    // quantity,
+    sections: this.getSectionsToRender().map((section) => section.section),
+    sections_url: window.location.pathname
+});
 
 $('.cartItemQuantity').on('change', function (){
-    function getSectionsToRender() {
-        return [
-            {
-                id: 'main-cart-items',
-                section: document.getElementById('main-cart-items').dataset.id,
-                selector: '.js-contents',
-            },
-            {
-                id: 'cart-icon-bubble',
-                section: 'cart-icon-bubble',
-                selector: '.shopify-section'
-            },
-            {
-                id: 'cart-live-region-text',
-                section: 'cart-live-region-text',
-                selector: '.shopify-section'
-            },
-            {
-                id: 'main-cart-footer',
-                section: document.getElementById('main-cart-footer').dataset.id,
-                selector: '.js-contents',
-            }
-        ];
-    }
 
-    let body = JSON.stringify({
-        // line,
-        // quantity,
-        sections: this.getSectionsToRender().map((section) => section.section),
-        sections_url: window.location.pathname
-    });
+
+
 
     // function updateQuantity(line, quantity, name) {
     //     this.enableLoading(line);
