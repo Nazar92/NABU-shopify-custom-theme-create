@@ -163,26 +163,6 @@ function fetchConfig(type = 'json') {
 
 $('.cartItemQuantity').on('change', function (){
     class CartItems extends HTMLElement {
-        constructor() {
-            super();
-
-            this.lineItemStatusElement = document.getElementById('shopping-cart-line-item-status') || document.getElementById('CartDrawer-LineItemStatus');
-
-            this.currentItemCount = Array.from(this.querySelectorAll('[name="updates[]"]'))
-                .reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0);
-
-            this.debouncedOnChange = debounce((event) => {
-                this.onChange(event);
-            }, 300);
-
-            this.addEventListener('change', this.debouncedOnChange.bind(this));
-        }
-
-        onChange(event) {
-            this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'));
-        }
-
-
         getSectionsToRender() {
             return [
                 {
@@ -212,8 +192,8 @@ $('.cartItemQuantity').on('change', function (){
             this.enableLoading(line);
 
             const body = JSON.stringify({
-                // line,
-                // quantity,
+                line,
+                quantity,
                 sections: this.getSectionsToRender().map((section) => section.section),
                 sections_url: window.location.pathname
             });
