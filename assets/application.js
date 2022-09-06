@@ -168,7 +168,7 @@ function getSectionsToRender() {
 }
 let body = JSON.stringify({
     // line,
-    quantity,
+    // quantity,
     sections: this.getSectionsToRender().map((section) => section.section),
     sections_url: window.location.pathname
 });
