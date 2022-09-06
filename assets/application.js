@@ -157,8 +157,8 @@ $('.cartItemQuantity').on('change', function (){
     let item_quantity = $('.cartItemQuantity').val();
     $.ajax({
         type: "POST",
-        url: window.Shopify.routes.root + 'cart/add.js',
-        data: {items: [{id: variant_id, quantity: item_quantity }]},
+        // url: window.Shopify.routes.root + 'cart/add.js',
+        // data: {items: [{id: variant_id, quantity: item_quantity }]},
         success: () => {
             fetch('/cart/change.js', {...fetchConfig(), ...{body}})
                 .then((response) => {
