@@ -191,7 +191,7 @@ $('.cartItemQuantity').on('click', function (){
         updateQuantity(line, quantity, name) {
             this.enableLoading(line);
 
-            const body = JSON.stringify({
+            let body = JSON.stringify({
                 line,
                 quantity,
                 sections: this.getSectionsToRender().map((section) => section.section),
