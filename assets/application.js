@@ -161,7 +161,7 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 });
 
 
-$('.itemQuantity').on('change', function (){
+$('.cartItemQuantity').on('change', function (){
     let body = JSON.stringify({"line":"1","quantity":"15","sections":["template--14636169756746__16623759011301efd7","cart-icon-bubble","cart-live-region-text","template--14636169756746__16620383389e944fb5"],"sections_url":"/cart"})
 
     fetch('/cart/change.js', {...fetchConfig(), ...{body}})
