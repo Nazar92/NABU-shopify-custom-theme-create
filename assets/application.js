@@ -175,18 +175,6 @@ function updateQuantity(line, quantity, name) {
         sections: this.getSectionsToRender().map((section) => section.section),
         sections_url: window.location.pathname
     });
-
-    fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
-        .then((response) => {
-            return response.text();
-        })
-        .then((state) => {
-            const parsedState = JSON.parse(state);
-            console.log(parsedState);
-            // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
-            // document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
-        });
-
 }
 
 $('.cartItemQuantity').on('change', function (){
@@ -198,16 +186,16 @@ $('.cartItemQuantity').on('change', function (){
     // }
 
 
-    // fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
-    //     .then((response) => {
-    //         return response.text();
-    //     })
-    //     .then((state) => {
-    //         const parsedState = JSON.parse(state);
-    //         console.log(parsedState);
-    //         // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
-    //         // document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
-    //     });
+    fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
+        .then((response) => {
+            return response.text();
+        })
+        .then((state) => {
+            const parsedState = JSON.parse(state);
+            console.log(parsedState);
+            // console.log(parsedState.sections['template--14636169756746__16623759011301efd7']);
+            // document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
+        });
 
 
 
