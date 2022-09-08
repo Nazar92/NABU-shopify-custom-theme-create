@@ -126,31 +126,80 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 // }
 //
 //
-function getSectionsToRender() {
 
-    return [
-        {
-            id: 'main-cart-items',
-            section: document.getElementById('main-cart-items').dataset.id,
-            selector: '.js-contents',
-        },
-        {
-            id: 'cart-icon-bubble',
-            section: 'cart-icon-bubble',
-            selector: '.shopify-section'
-        },
-        {
-            id: 'cart-live-region-text',
-            section: 'cart-live-region-text',
-            selector: '.shopify-section'
-        },
-        {
-            id: 'main-cart-footer',
-            section: document.getElementById('main-cart-footer').dataset.id,
-            selector: '.js-contents',
-        }
-    ];
+class CartItems extends HTMLElement {
+    constructor() {
+        super();
+
+        this.lineItemStatusElement = document.getElementById('shopping-cart-line-item-status') || document.getElementById('CartDrawer-LineItemStatus');
+
+        this.currentItemCount = Array.from(this.querySelectorAll('[name="updates[]"]'))
+            .reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0);
+
+        this.debouncedOnChange = debounce((event) => {
+            this.onChange(event);
+        }, 300);
+
+        this.addEventListener('change', this.debouncedOnChange.bind(this));
+    }
+
+    onChange(event) {
+        this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'));
+    }
+
+    getSectionsToRender() {
+
+        return [
+            {
+                id: 'main-cart-items',
+                section: document.getElementById('main-cart-items').dataset.id,
+                selector: '.js-contents',
+            },
+            {
+                id: 'cart-icon-bubble',
+                section: 'cart-icon-bubble',
+                selector: '.shopify-section'
+            },
+            {
+                id: 'cart-live-region-text',
+                section: 'cart-live-region-text',
+                selector: '.shopify-section'
+            },
+            {
+                id: 'main-cart-footer',
+                section: document.getElementById('main-cart-footer').dataset.id,
+                selector: '.js-contents',
+            }
+        ];
+    }
 }
+
+
+// function getSectionsToRender() {
+//
+//     return [
+//         {
+//             id: 'main-cart-items',
+//             section: document.getElementById('main-cart-items').dataset.id,
+//             selector: '.js-contents',
+//         },
+//         {
+//             id: 'cart-icon-bubble',
+//             section: 'cart-icon-bubble',
+//             selector: '.shopify-section'
+//         },
+//         {
+//             id: 'cart-live-region-text',
+//             section: 'cart-live-region-text',
+//             selector: '.shopify-section'
+//         },
+//         {
+//             id: 'main-cart-footer',
+//             section: document.getElementById('main-cart-footer').dataset.id,
+//             selector: '.js-contents',
+//         }
+//     ];
+// }
 function updateQuantity(line, quantity, name) {
     this.enableLoading(line);
 
@@ -163,6 +212,8 @@ function updateQuantity(line, quantity, name) {
     });
 
 }
+
+
 
 function enableLoading(line) {
     const mainCartItems = document.getElementById('main-cart-items') || document.getElementById('CartDrawer-CartItems');
