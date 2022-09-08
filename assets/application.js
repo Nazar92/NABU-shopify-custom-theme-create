@@ -204,7 +204,7 @@ class CartItems extends HTMLElement {
             sections_url: window.location.pathname
         });
 
-        fetch(`${routes.cart_change_url}`, {...fetchConfig(), ...{ body }})
+        fetch(`${routes.cart_change_url}`, {...fetchConfig(), ...{body}})
             .then((response) => {
                 return response.text();
             })
@@ -225,7 +225,7 @@ class CartItems extends HTMLElement {
                 }));
 
                 this.updateLiveRegions(line, parsedState.item_count);
-                const lineItem =  document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
+                const lineItem = document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
                 if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
                     cartDrawerWrapper ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`)) : lineItem.querySelector(`[name="${name}"]`).focus();
                 } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
@@ -253,7 +253,7 @@ class CartItems extends HTMLElement {
         //         document.getElementById('SRCC-container').innerHTML = parsedState.sections['template--14636169756746__16623759011301efd7'];
         //     });
 
-
+    }
 
 
 
@@ -306,7 +306,7 @@ class CartItems extends HTMLElement {
             mainCartItems.classList.remove('cart__items--disabled');
         }
 
-    }
+
 
 }
 
