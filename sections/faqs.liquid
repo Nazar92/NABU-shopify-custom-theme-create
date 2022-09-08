@@ -1,7 +1,12 @@
 <div class="faqs-section">
     <div class="container">
         <h1>{{ section.settings.section-title }}</h1>
-        
+        {% for block in section.blocks %}
+            <details>
+                <summary>{{ block.settings.summary }}</summary>
+                <p>{{ block.settings.detail }}</p>
+            </details>
+        {% endfor %}
     </div>
 </div>
 
