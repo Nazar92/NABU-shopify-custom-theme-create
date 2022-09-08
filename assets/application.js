@@ -163,10 +163,10 @@ $('.cartItemQuantity').on('change', function (){
 
 
 
-    // function updateQuantity(line, quantity, name) {
-    //     this.enableLoading(line);
-    //
-    // }
+    function updateQuantity(line, quantity, name) {
+        this.enableLoading(line);
+
+    }
 
 
     fetch('/cart/change.js', {...fetchConfig(), ...{ body }})
