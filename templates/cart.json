@@ -13,12 +13,12 @@
     },
     "1662638817f82a62a5": {
       "type": "main-cart-items",
-      "disabled": true,
       "settings": {
       }
     },
     "166263980686f94b7e": {
       "type": "my-custom-cart",
+      "disabled": true,
       "settings": {
       }
     }
