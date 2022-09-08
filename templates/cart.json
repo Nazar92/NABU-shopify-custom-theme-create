@@ -5,14 +5,14 @@
       "settings": {
       }
     },
-    "16618642566501668b": {
-      "type": "main-cart-items",
+    "16620380214644cc2c": {
+      "type": "my-cart",
       "settings": {
       }
     }
   },
   "order": [
     "main",
-    "16618642566501668b"
+    "16620380214644cc2c"
   ]
 }
