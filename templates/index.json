@@ -109,12 +109,55 @@
         "title": "Test section",
         "main-img": "shopify:\/\/shop_images\/2021-12-22_16-33.webp"
       }
+    },
+    "1662634971c639246f": {
+      "type": "faqs",
+      "blocks": {
+        "a7e2acb2-88b0-40c6-abca-8e14f153c1b3": {
+          "type": "faq",
+          "settings": {
+            "summary": "Heading",
+            "detail": "Detail text"
+          }
+        },
+        "1984f10e-808e-4de0-ae2d-9057aa4d3307": {
+          "type": "faq",
+          "settings": {
+            "summary": "Heading",
+            "detail": "Detail text"
+          }
+        },
+        "2b0493eb-81b3-47a4-b62a-4b32eaddc995": {
+          "type": "faq",
+          "settings": {
+            "summary": "Heading",
+            "detail": "Detail text"
+          }
+        },
+        "5dd03dea-35ea-4169-84e7-53e542f3224a": {
+          "type": "faq",
+          "settings": {
+            "summary": "Heading",
+            "detail": "Detail text"
+          }
+        }
+      },
+      "block_order": [
+        "a7e2acb2-88b0-40c6-abca-8e14f153c1b3",
+        "1984f10e-808e-4de0-ae2d-9057aa4d3307",
+        "2b0493eb-81b3-47a4-b62a-4b32eaddc995",
+        "5dd03dea-35ea-4169-84e7-53e542f3224a"
+      ],
+      "settings": {
+        "section-title": "Faqs"
+      }
     }
   },
   "order": [
     "163993588734b31af9",
     "1640173596fa70b98f",
     "1641633282f3c4914f",
-    "16581338822ab286e2"
+    "16581338822ab286e2",
+    "1662634971c639246f"
   ]
 }
