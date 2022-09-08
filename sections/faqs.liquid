@@ -1,10 +1,21 @@
-
+<div class="faqs-section">
+    <div class="container">
+        <h1>{{ section.settings.section-title }}</h1>
+    </div>
+</div>
 
 
 {% schema %}
 {
   "name": "Faqs",
   "class": "faqs",
+  "settings": [
+    {
+      "id": "section-title",
+      "type": "text",
+      "label": "Section title"
+    }
+  ],
   "blocks": [
     {
       "type": "faq",
