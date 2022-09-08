@@ -122,10 +122,12 @@ function fetchConfig(type = 'json') {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': `application/${type}` }
     };
+
 }
 
 
 function getSectionsToRender() {
+
     return [
         {
             id: 'main-cart-items',
@@ -150,8 +152,8 @@ function getSectionsToRender() {
     ];
 }
 let body = JSON.stringify({
-    // line,
-    // quantity,
+    line,
+    quantity,
     sections: this.getSectionsToRender().map((section) => section.section),
     sections_url: window.location.pathname
 });
