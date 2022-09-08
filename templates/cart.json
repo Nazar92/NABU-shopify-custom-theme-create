@@ -1,12 +1,18 @@
 {
   "sections": {
-    "16623759011301efd7": {
-      "type": "my-custom-cart",
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16618642566501668b": {
+      "type": "main-cart-items",
       "settings": {
       }
     }
   },
   "order": [
-    "16623759011301efd7"
+    "main",
+    "16618642566501668b"
   ]
 }

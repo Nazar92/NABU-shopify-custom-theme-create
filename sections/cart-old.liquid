@@ -1,5 +1,5 @@
 
-<div class="container" data-section-id="{{ section.id }}">
+<div class="container">
     {% if cart.item_count > 0 %}
         <h1>cart</h1>
         <form action="/cart" method="post" novalidate>
@@ -49,18 +49,4 @@
 </div>
 
 
-
-{% schema %}
-  {
-    "name": "Cart",
-    "settings": [
-    ],
-    "blocks": [],
-  "presets": [
-      {
-        "name": "Cart"
-      }
-    ]
-  }
-{% endschema %}
 

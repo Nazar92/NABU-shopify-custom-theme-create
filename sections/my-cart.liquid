@@ -1,5 +1,5 @@
 
-<form action="{{ routes.checkout_url }}" method="post" class="my-cart">
+{% comment %}<form action="{{ routes.checkout_url }}" method="post" class="my-cart">{% endcomment %}
     <!-- data-ajax-cart-section makes the element's HTML update
     when the cart gets changed -->
     <div class="container">
@@ -82,28 +82,12 @@
     <br>
     <br>
 </div>
-</form>
+{% comment %}</form>{% endcomment %}
 
 {% schema %}
 
 {
-    "name": "My Cart",
-     "settings": [],
-  "presets": [
-      {
-        "name": "My Cart"
-      }
-    ]
-
+    "name": "My Cart"
 }
 
 {% endschema %}
-
-
-
-
-
-
-
-
-
