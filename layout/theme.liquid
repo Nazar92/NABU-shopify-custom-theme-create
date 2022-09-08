@@ -34,11 +34,11 @@
   <script src="{{ 'application.js' | asset_url }}"></script>
 
   <script type="application/json" data-ajax-cart-initial-state >
-  {{ cart | json }}
+{% comment %}//  {{ cart | json }}{% endcomment %}
   </script>
 
   <script type="module">
-    import '{{ "liquid-ajax-cart-v1.10.2.js" | asset_url }}';
+    {% comment %}import '{{ "liquid-ajax-cart-v1.10.2.js" | asset_url }}';{% endcomment %}
   </script>
 
 </body>
