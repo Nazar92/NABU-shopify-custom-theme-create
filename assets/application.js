@@ -172,6 +172,20 @@ class CartItems extends HTMLElement {
             }
         ];
     }
+
+    updateQuantity(line, quantity, name) {
+        this.enableLoading(line);
+
+
+        let body = JSON.stringify({
+            line,
+            quantity,
+            sections: this.getSectionsToRender().map((section) => section.section),
+            sections_url: window.location.pathname
+        });
+
+    }
+
 }
 
 
@@ -200,18 +214,21 @@ class CartItems extends HTMLElement {
 //         }
 //     ];
 // }
-function updateQuantity(line, quantity, name) {
-    this.enableLoading(line);
 
 
-    let body = JSON.stringify({
-        line,
-        quantity,
-        sections: this.getSectionsToRender().map((section) => section.section),
-        sections_url: window.location.pathname
-    });
-
-}
+//
+// function updateQuantity(line, quantity, name) {
+//     this.enableLoading(line);
+//
+//
+//     let body = JSON.stringify({
+//         line,
+//         quantity,
+//         sections: this.getSectionsToRender().map((section) => section.section),
+//         sections_url: window.location.pathname
+//     });
+//
+// }
 
 
 
