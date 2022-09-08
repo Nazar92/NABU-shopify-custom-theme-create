@@ -7,17 +7,6 @@
       "163993588734b31af9": {
         "type": "hero-slider",
         "blocks": {
-          "f4ef32d5-b4d2-4377-b77a-78190bac623d": {
-            "type": "slide",
-            "settings": {
-              "background_image": "shopify:\/\/shop_images\/shapka-1024x741.jpg",
-              "title": "Heading",
-              "boldtitle": "Introduce customers to your shop with lifestyle and product imagery",
-              "button_primary_label": "Shop Now",
-              "button_primary_link": "",
-              "button_secondary_label": "Shop Now Bundle"
-            }
-          },
           "e0413ea4-6e2f-4c36-aa8f-56baf454fce6": {
             "type": "slide",
             "settings": {
@@ -28,11 +17,22 @@
               "button_primary_link": "",
               "button_secondary_label": "Shop Now Bundle"
             }
+          },
+          "f4ef32d5-b4d2-4377-b77a-78190bac623d": {
+            "type": "slide",
+            "settings": {
+              "background_image": "shopify:\/\/shop_images\/shapka-1024x741.jpg",
+              "title": "Heading",
+              "boldtitle": "Introduce customers to your shop with lifestyle and product imagery",
+              "button_primary_label": "Shop Now",
+              "button_primary_link": "",
+              "button_secondary_label": "Shop Now Bundle"
+            }
           }
         },
         "block_order": [
-          "f4ef32d5-b4d2-4377-b77a-78190bac623d",
-          "e0413ea4-6e2f-4c36-aa8f-56baf454fce6"
+          "e0413ea4-6e2f-4c36-aa8f-56baf454fce6",
+          "f4ef32d5-b4d2-4377-b77a-78190bac623d"
         ],
         "settings": {
           "enable_autoplay": true,
@@ -157,13 +157,64 @@
           "title": "Test section",
           "main-img": "shopify:\/\/shop_images\/2021-12-22_16-33.webp"
         }
+      },
+      "16626334080e575ac5": {
+        "type": "faqs",
+        "blocks": {
+          "438244b9-f9ab-4339-953c-9937f471a7d8": {
+            "type": "faq",
+            "settings": {
+              "summary": "Heading",
+              "detail": "Detail text"
+            }
+          },
+          "67581b13-0ccf-4273-b037-54774b5948ad": {
+            "type": "faq",
+            "settings": {
+              "summary": "Heading",
+              "detail": "Detail text"
+            }
+          },
+          "a58e629b-7437-4f2b-b210-f6f75fd45d07": {
+            "type": "faq",
+            "settings": {
+              "summary": "Heading",
+              "detail": "Detail text"
+            }
+          },
+          "d8415cbe-b308-4af8-8fd2-26f3ab79fc99": {
+            "type": "faq",
+            "settings": {
+              "summary": "Heading",
+              "detail": "Detail text"
+            }
+          },
+          "7d6b2a85-ed30-4091-a570-aacc7a3891c7": {
+            "type": "faq",
+            "settings": {
+              "summary": "Heading",
+              "detail": "Detail text"
+            }
+          }
+        },
+        "block_order": [
+          "438244b9-f9ab-4339-953c-9937f471a7d8",
+          "67581b13-0ccf-4273-b037-54774b5948ad",
+          "a58e629b-7437-4f2b-b210-f6f75fd45d07",
+          "d8415cbe-b308-4af8-8fd2-26f3ab79fc99",
+          "7d6b2a85-ed30-4091-a570-aacc7a3891c7"
+        ],
+        "settings": {
+          "section-title": "Faqs"
+        }
       }
     },
     "content_for_index": [
       "163993588734b31af9",
-      "1640173596fa70b98f",
       "1641633282f3c4914f",
-      "16581338822ab286e2"
+      "16581338822ab286e2",
+      "1640173596fa70b98f",
+      "16626334080e575ac5"
     ]
   },
   "presets": {
