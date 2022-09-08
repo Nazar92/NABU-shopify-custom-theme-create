@@ -115,17 +115,23 @@ document.querySelectorAll('.shopify-currency-form select').forEach(function(elem
 
 
 
-//
-//
-// function fetchConfig(type = 'json') {
-//     return {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json', 'Accept': `application/${type}` }
-//     };
-//
-// }
-//
-//
+
+
+
+
+
+
+
+
+
+function fetchConfig(type = 'json') {
+    return {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': `application/${type}` }
+    };
+
+}
+
 
 class CartItems extends HTMLElement {
     constructor() {
