@@ -197,6 +197,23 @@ class CartItems extends HTMLElement {
         //     });
 
 
+
+
+
+
+        function enableLoading(line) {
+            const mainCartItems = document.getElementById('main-cart-items') || document.getElementById('CartDrawer-CartItems');
+            mainCartItems.classList.add('cart__items--disabled');
+
+            const cartItemElements = this.querySelectorAll(`#CartItem-${line} .loading-overlay`);
+            const cartDrawerItemElements = this.querySelectorAll(`#CartDrawer-Item-${line} .loading-overlay`);
+
+            [...cartItemElements, ...cartDrawerItemElements].forEach((overlay) => overlay.classList.remove('hidden'));
+
+            document.activeElement.blur();
+            this.lineItemStatusElement.setAttribute('aria-hidden', false);
+        }
+
     }
 
 }
@@ -245,18 +262,7 @@ class CartItems extends HTMLElement {
 
 
 
-// function enableLoading(line) {
-//     const mainCartItems = document.getElementById('main-cart-items') || document.getElementById('CartDrawer-CartItems');
-//     mainCartItems.classList.add('cart__items--disabled');
-//
-//     const cartItemElements = this.querySelectorAll(`#CartItem-${line} .loading-overlay`);
-//     const cartDrawerItemElements = this.querySelectorAll(`#CartDrawer-Item-${line} .loading-overlay`);
-//
-//     [...cartItemElements, ...cartDrawerItemElements].forEach((overlay) => overlay.classList.remove('hidden'));
-//
-//     document.activeElement.blur();
-//     this.lineItemStatusElement.setAttribute('aria-hidden', false);
-// }
+
 
 $('.cartItemQuantity').on('change', function (){
 
