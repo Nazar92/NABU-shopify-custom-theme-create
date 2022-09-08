@@ -258,7 +258,37 @@ class CartItems extends HTMLElement {
 
 
 
-        function enableLoading(line) {
+        updateLiveRegions(line, itemCount) {
+            if (this.currentItemCount === itemCount) {
+                const lineItemError = document.getElementById(`Line-item-error-${line}`) || document.getElementById(`CartDrawer-LineItemError-${line}`);
+                const quantityElement = document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
+
+                lineItemError
+                    .querySelector('.cart-item__error-text')
+                    .innerHTML = window.cartStrings.quantityError.replace(
+                    '[quantity]',
+                    quantityElement.value
+                );
+            }
+
+            this.currentItemCount = itemCount;
+            this.lineItemStatusElement.setAttribute('aria-hidden', true);
+
+            const cartStatus = document.getElementById('cart-live-region-text') || document.getElementById('CartDrawer-LiveRegionText');
+            cartStatus.setAttribute('aria-hidden', false);
+
+            setTimeout(() => {
+                cartStatus.setAttribute('aria-hidden', true);
+            }, 1000);
+        }
+
+        getSectionInnerHTML(html, selector) {
+            return new DOMParser()
+                .parseFromString(html, 'text/html')
+                .querySelector(selector).innerHTML;
+        }
+
+        enableLoading(line) {
             const mainCartItems = document.getElementById('main-cart-items') || document.getElementById('CartDrawer-CartItems');
             mainCartItems.classList.add('cart__items--disabled');
 
@@ -269,6 +299,11 @@ class CartItems extends HTMLElement {
 
             document.activeElement.blur();
             this.lineItemStatusElement.setAttribute('aria-hidden', false);
+        }
+
+        disableLoading() {
+            const mainCartItems = document.getElementById('main-cart-items') || document.getElementById('CartDrawer-CartItems');
+            mainCartItems.classList.remove('cart__items--disabled');
         }
 
     }
