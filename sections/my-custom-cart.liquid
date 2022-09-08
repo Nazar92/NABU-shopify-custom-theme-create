@@ -26,8 +26,15 @@
                             </td>
                             <td>{{ item.price | money }}</td>
                             <td>
-                                <input class="cartItemQuantity" type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
-                            </td>
+                                <input class="quantity__input"
+                                       type="number"
+                                       name="updates[]"
+                                       value="{{ item.quantity }}"
+                                       min="0"
+                                       aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                                       id="Quantity-{{ item.index | plus: 1 }}"
+                                       data-index="{{ item.index | plus: 1 }}"
+                                >                            </td>
                             <td>
                                 {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
                                 {{ item.line_price | money }}
