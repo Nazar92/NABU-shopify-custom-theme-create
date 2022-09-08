@@ -7,12 +7,19 @@
     },
     "16620380214644cc2c": {
       "type": "my-cart",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1662638817f82a62a5": {
+      "type": "main-cart-items",
       "settings": {
       }
     }
   },
   "order": [
     "main",
-    "16620380214644cc2c"
+    "16620380214644cc2c",
+    "1662638817f82a62a5"
   ]
 }
