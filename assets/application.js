@@ -151,12 +151,7 @@ function getSectionsToRender() {
         }
     ];
 }
-let body = JSON.stringify({
-    line,
-    quantity,
-    sections: this.getSectionsToRender().map((section) => section.section),
-    sections_url: window.location.pathname
-});
+
 
 $('.cartItemQuantity').on('change', function (){
 
@@ -165,6 +160,14 @@ $('.cartItemQuantity').on('change', function (){
 
     function updateQuantity(line, quantity, name) {
         this.enableLoading(line);
+
+
+        let body = JSON.stringify({
+            line,
+            quantity,
+            sections: this.getSectionsToRender().map((section) => section.section),
+            sections_url: window.location.pathname
+        });
 
     }
 
