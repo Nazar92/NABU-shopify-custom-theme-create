@@ -17,8 +17,6 @@
                   <h2 class="totals__subtotal">Subtotal</h2>
                   <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
                 </div>
-
-
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
