@@ -24,6 +24,22 @@
     },
     "1662721633a09e30eb": {
       "type": "main-cart-footer",
+      "blocks": {
+        "f21518d3-b618-46cf-ab02-36421b48830c": {
+          "type": "subtotal",
+          "settings": {
+          }
+        },
+        "8bb6b053-7913-4c8b-bd14-e979d4ad65f1": {
+          "type": "buttons",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "f21518d3-b618-46cf-ab02-36421b48830c",
+        "8bb6b053-7913-4c8b-bd14-e979d4ad65f1"
+      ],
       "settings": {
       }
     }
