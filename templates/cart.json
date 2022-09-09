@@ -21,12 +21,18 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "1662721633a09e30eb": {
+      "type": "main-cart-footer",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "16620380214644cc2c",
     "1662638817f82a62a5",
-    "166263980686f94b7e"
+    "166263980686f94b7e",
+    "1662721633a09e30eb"
   ]
 }
