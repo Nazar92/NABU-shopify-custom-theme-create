@@ -10,7 +10,6 @@
       <div class="cart__blocks">
         {% for block in section.blocks %}
           {%- case block.type -%}
-            {%- when '@app' -%}
               {% render block %}
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
@@ -75,9 +74,6 @@
       "type": "buttons",
       "name": "Cart buttons",
       "limit": 1
-    },
-    {
-      "type": "@app"
     }
   ],
   "presets": [
