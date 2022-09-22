@@ -60,11 +60,32 @@
               "mega-img-link": "",
               "mega-item-title": "Item 2"
             }
+          },
+          "2648ef10-fe30-4ba2-90b1-6148adc54255": {
+            "type": "logo_image",
+            "settings": {
+              "mage_main_linklist": "mobile-menu",
+              "mage_main_linklist2": "footer",
+              "mega-image": "shopify:\/\/shop_images\/HeroBanner-Desktop7_1.webp",
+              "mega-img-link": "",
+              "mega-item-title": "j"
+            }
+          },
+          "2e6fff5a-90fe-46de-9815-1877f5d70264": {
+            "type": "logo_image",
+            "settings": {
+              "mage_main_linklist": "",
+              "mage_main_linklist2": "",
+              "mega-img-link": "",
+              "mega-item-title": ""
+            }
           }
         },
         "block_order": [
           "0457b34b-2918-4774-8899-8c150f1bf262",
-          "0a621bb2-e1ac-4b0e-ba7e-71535b3be6ca"
+          "0a621bb2-e1ac-4b0e-ba7e-71535b3be6ca",
+          "2648ef10-fe30-4ba2-90b1-6148adc54255",
+          "2e6fff5a-90fe-46de-9815-1877f5d70264"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/12_sign_black.png",
