@@ -16,6 +16,7 @@
         },
         "e0413ea4-6e2f-4c36-aa8f-56baf454fce6": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify:\/\/shop_images\/Group_3.png",
             "title": "Heading",
